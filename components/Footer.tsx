@@ -64,9 +64,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-800 py-4 text-center text-xs text-gray-500">
-        © {new Date().getFullYear()} Songadhwa Akhra No-7 Dol Mela Committee. All rights reserved.
-      </div>
+      
       <div className="border-t border-gray-800 py-4 text-center text-xs text-gray-500 space-y-1">
       <p>© {new Date().getFullYear()} Songadhwa Akhra No-7 Dol Mela Committee. All rights reserved.</p>
         <VisitorCounter />

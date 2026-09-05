@@ -27,6 +27,7 @@ export default function Hero() {
   const t = content[lang];
 
   return (
+    
     <section className="relative bg-gradient-to-b from-orange-50 to-white py-20 px-4 text-center">
       <p className="text-orange-600 font-semibold tracking-wide uppercase text-sm mb-3">
         {t.tagline}
