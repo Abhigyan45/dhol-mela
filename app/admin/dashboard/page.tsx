@@ -13,6 +13,8 @@ export default function AdminDashboard() {
         <Link href="/admin/gallery" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Manage Gallery</Link>
         <Link href="/admin/contact" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Contact Messages</Link>
         <Link href="/admin/live-updates" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Live Updates</Link>
+        <Link href="/admin/volunteers" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Volunteers</Link>
+        <Link href="/admin/sponsors" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Sponsors</Link>
       </div>
     </div>
   );

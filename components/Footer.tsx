@@ -1,4 +1,5 @@
 import Link from "next/link";
+import VisitorCounter from "./VisitorCounter";
 
 const FACEBOOK_URL = "https://facebook.com/YOUR_PAGE_HERE";
 const INSTAGRAM_URL = "https://instagram.com/YOUR_HANDLE_HERE";
@@ -65,6 +66,10 @@ export default function Footer() {
 
       <div className="border-t border-gray-800 py-4 text-center text-xs text-gray-500">
         © {new Date().getFullYear()} Songadhwa Akhra No-7 Dol Mela Committee. All rights reserved.
+      </div>
+      <div className="border-t border-gray-800 py-4 text-center text-xs text-gray-500 space-y-1">
+      <p>© {new Date().getFullYear()} Songadhwa Akhra No-7 Dol Mela Committee. All rights reserved.</p>
+        <VisitorCounter />
       </div>
     </footer>
   );

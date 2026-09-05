@@ -5,6 +5,9 @@ import HistorySection from "@/components/HistorySection";
 import NewsSection from "@/components/NewsSection";
 import GallerySection from "@/components/GallerySection";
 import Committee from "@/components/Committee";
+import SponsorsSection from "@/components/SponsorsSection";
+// ...
+<SponsorsSection />
 
 export default function Home() {
   return (

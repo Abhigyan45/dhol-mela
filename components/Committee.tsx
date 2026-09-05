@@ -12,7 +12,7 @@ export default async function Committee() {
         <p className="text-gray-500 text-center">Committee members coming soon.</p>
       ) : (
         <div className="grid sm:grid-cols-3 gap-6 text-center">
-          {members.map((m) => (
+          {members.map((m: typeof members[number]) => (
             <div key={m.id}>
               <div className="w-20 h-20 mx-auto rounded-full bg-gray-300 mb-3" />
               <p className="font-semibold">{m.name}</p>

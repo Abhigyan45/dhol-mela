@@ -16,7 +16,7 @@ export default async function NewsSection() {
         <p className="text-gray-500">No news yet — check back soon.</p>
       ) : (
         <div className="grid md:grid-cols-2 gap-6">
-          {newsItems.map((item) => (
+          {newsItems.map((item: typeof newsItems[number]) => (
             <div key={item.id} className="border rounded-xl p-5 hover:shadow-md transition-shadow">
               <p className="text-sm text-gray-400 mb-1">
                 {new Date(item.createdAt).toLocaleDateString()}

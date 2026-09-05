@@ -28,7 +28,7 @@ export default async function GalleryPage() {
               <div key={year}>
                 <h2 className="text-2xl font-bold mb-4">{year}</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {byYear[year].map((p) => (
+                  {byYear[year].map((p: typeof photos[number]) => (
                     <div key={p.id}>
                       <img src={p.url} alt={p.caption ?? ""} className="w-full aspect-square object-cover rounded-xl" />
                       <p className="text-xs text-gray-500 mt-1">{p.category}</p>

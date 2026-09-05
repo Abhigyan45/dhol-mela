@@ -17,6 +17,8 @@ const navLinks = [
   { href: "/location", label: "Location" },
   { href: "/contact", label: "Contact" },
   { href: "/live", label: "Live" },
+  { href: "/search", label: "Search" },
+  { href: "/volunteer", label: "Volunteer" }
 ];
 
 export default function Navbar() {

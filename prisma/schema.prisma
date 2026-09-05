@@ -84,3 +84,25 @@ model LiveUpdate {
   message   String
   createdAt DateTime @default(now())
 }
+model SiteStats {
+  id           String @id @default("main")
+  visitorCount Int    @default(0)
+}
+
+model Volunteer {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  village   String?
+  interest  String?  // what they want to help with
+  createdAt DateTime @default(now())
+}
+
+model Sponsor {
+  id           String   @id @default(cuid())
+  name         String
+  logoUrl      String?
+  contribution String?  // e.g. "Gold Sponsor", "Food Stall Sponsor"
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+}

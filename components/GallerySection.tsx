@@ -15,7 +15,7 @@ export default async function GallerySection() {
         <p className="text-gray-500">Photos coming soon.</p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {photos.map((p) => (
+          {photos.map((p: typeof photos[number]) => (
             <img key={p.id} src={p.url} alt={p.caption ?? ""} className="w-full aspect-square object-cover rounded-xl" />
           ))}
         </div>
