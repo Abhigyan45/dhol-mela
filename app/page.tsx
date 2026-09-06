@@ -2,12 +2,10 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import NotificationBanner from "@/components/NotificationBanner";
 import HistorySection from "@/components/HistorySection";
-import NewsSection from "@/components/NewsSection";
-import GallerySection from "@/components/GallerySection";
-import Committee from "@/components/Committee";
+import NewsSectionServer from "@/components/NewsSectionServer";
+import GallerySectionServer from "@/components/GallerySectionServer";
+import CommitteeServer from "@/components/CommitteeServer";
 import SponsorsSection from "@/components/SponsorsSection";
-// ...
-<SponsorsSection />
 
 export default function Home() {
   return (
@@ -16,9 +14,10 @@ export default function Home() {
       <NotificationBanner />
       <Hero />
       <HistorySection />
-      <NewsSection />
-      <GallerySection />
-      <Committee />
+      <NewsSectionServer />
+      <GallerySectionServer />
+      <CommitteeServer />
+      <SponsorsSection />
     </main>
   );
 }

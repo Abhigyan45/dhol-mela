@@ -1,22 +1,26 @@
-import { PrismaClient } from "@prisma/client";
+"use client";
 
-const prisma = new PrismaClient();
+import { useLanguage } from "@/context/LanguageContext";
 
-export default async function NewsSection() {
-  const newsItems = await prisma.news.findMany({
-    where: { published: true },
-    orderBy: { createdAt: "desc" },
-    take: 4,
-  });
+const content = {
+  en: { heading: "📰 Latest Mela News", empty: "No news yet — check back soon." },
+  hi: { heading: "📰 ताज़ा मेला समाचार", empty: "अभी कोई समाचार नहीं — जल्द ही देखें।" },
+};
+
+type NewsItem = { id: string; title: string; summary: string; createdAt: string | Date };
+
+export default function NewsSection({ newsItems }: { newsItems: NewsItem[] }) {
+  const { lang } = useLanguage();
+  const t = content[lang];
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold mb-6">📰 Latest Mela News</h2>
+      <h2 className="text-3xl font-bold mb-6">{t.heading}</h2>
       {newsItems.length === 0 ? (
-        <p className="text-gray-500">No news yet — check back soon.</p>
+        <p className="text-gray-500">{t.empty}</p>
       ) : (
         <div className="grid md:grid-cols-2 gap-6">
-          {newsItems.map((item: typeof newsItems[number]) => (
+          {newsItems.map((item) => (
             <div key={item.id} className="border rounded-xl p-5 hover:shadow-md transition-shadow">
               <p className="text-sm text-gray-400 mb-1">
                 {new Date(item.createdAt).toLocaleDateString()}

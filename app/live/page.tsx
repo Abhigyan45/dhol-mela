@@ -2,10 +2,18 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
+import { useLanguage } from "@/context/LanguageContext";
+
+const content = {
+  en: { heading: "Live Updates", sub: "Real-time updates from the mela ground, October 15, 2026.", empty: "No live updates yet — check back once the mela begins." },
+  hi: { heading: "लाइव अपडेट", sub: "15 अक्टूबर 2026 को मेला स्थल से रीयल-टाइम अपडेट।", empty: "अभी कोई लाइव अपडेट नहीं — मेला शुरू होने पर देखें।" },
+};
 
 type Update = { id: string; timeLabel: string; message: string };
 
 export default function LivePage() {
+  const { lang } = useLanguage();
+  const t = content[lang];
   const [updates, setUpdates] = useState<Update[]>([]);
 
   useEffect(() => {
@@ -13,12 +21,10 @@ export default function LivePage() {
       try {
         const res = await fetch("/api/live-updates");
         setUpdates(await res.json());
-      } catch {
-        // fail silently, keep last known updates
-      }
+      } catch {}
     }
     load();
-    const interval = setInterval(load, 15000); // faster poll — 15s — since this matters most in-the-moment
+    const interval = setInterval(load, 15000);
     return () => clearInterval(interval);
   }, []);
 
@@ -28,12 +34,11 @@ export default function LivePage() {
       <section className="max-w-2xl mx-auto px-4 py-16">
         <h1 className="text-3xl font-bold mb-2 flex items-center gap-2">
           <span className="inline-block w-3 h-3 rounded-full bg-red-600 animate-pulse" />
-          Live Updates
+          {t.heading}
         </h1>
-        <p className="text-gray-600 mb-8">Real-time updates from the mela ground, October 15, 2026.</p>
-
+        <p className="text-gray-600 mb-8">{t.sub}</p>
         {updates.length === 0 ? (
-          <p className="text-gray-500">No live updates yet — check back once the mela begins.</p>
+          <p className="text-gray-500">{t.empty}</p>
         ) : (
           <div className="space-y-4">
             {updates.map((u) => (
