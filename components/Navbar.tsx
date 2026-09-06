@@ -27,7 +27,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const { lang, toggleLang } = useLanguage();
-  const moreRef = useRef<HTMLDivElement>(null);
+  const moreRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
