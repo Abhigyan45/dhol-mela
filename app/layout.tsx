@@ -40,13 +40,13 @@ import "./globals.css";
 const display = Baloo_2({
   subsets: ["latin", "devanagari"],
   weight: ["600", "700", "800"],
-  variable: "--font-display",
+  variable: "--font-heading",   // renamed
 });
 
 const body = Hind({
   subsets: ["latin", "devanagari"],
   weight: ["400", "500", "600"],
-  variable: "--font-body",
+  variable: "--font-bodytext",  // renamed
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

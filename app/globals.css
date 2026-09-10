@@ -25,30 +25,44 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme inline {
+  --color-maroon: #7A1F2B;
+  --color-maroon-dark: #5C1620;
+  --color-maroon-light: #9A3040;
+  --color-gold: #C9962C;
+  --color-gold-light: #E0B85C;
+  --color-gold-dark: #A87A1F;
+  --color-ivory: #FBF6EE;
+  --color-charcoal: #241C1A;
+
+  --font-display: var(--font-heading), sans-serif;
+  --font-body: var(--font-bodytext), sans-serif;
+
+  --radius-card: 0.875rem;
+}
 
 @layer base {
   h1, h2, h3 {
-    @apply font-display;
+    font-family: var(--font-display);
   }
 }
 
 @layer components {
-  /* Small triangular "bunting" divider — echoes the flags in the Hero photo.
-     Use as <div className="bunting-divider" /> between sections instead of nothing. */
   .bunting-divider {
     height: 14px;
-    background-image: linear-gradient(45deg, theme('colors.gold.DEFAULT') 25%, transparent 25%),
-                       linear-gradient(-45deg, theme('colors.gold.DEFAULT') 25%, transparent 25%);
+    background-image: linear-gradient(45deg, var(--color-gold) 25%, transparent 25%),
+                       linear-gradient(-45deg, var(--color-gold) 25%, transparent 25%);
     background-size: 14px 14px;
     background-position: center;
     opacity: 0.55;
   }
 
-  /* Standard card treatment — maroon-tinted, not generic gray */
   .card {
-    @apply bg-white border border-maroon-light/20 rounded-card shadow-sm;
+    background-color: white;
+    border: 1px solid color-mix(in srgb, var(--color-maroon-light) 20%, transparent);
+    border-radius: var(--radius-card);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }
 }
