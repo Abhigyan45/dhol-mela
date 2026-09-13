@@ -2,7 +2,9 @@ import Navbar from "@/components/Navbar";
 import { PrismaClient } from "@prisma/client";
 import NewsPageContent from "@/components/NewsPageContent";
 
+
 const prisma = new PrismaClient();
+export const dynamic = "force-dynamic";
 
 export default async function NewsPage() {
   const newsItems = await prisma.news.findMany({

@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import { PrismaClient } from "@prisma/client";
 
+
 const prisma = new PrismaClient();
+export const dynamic = "force-dynamic";
 
 export default async function ArchivePage() {
   const archives = await prisma.archive.findMany({

@@ -6,6 +6,7 @@ import NewsSectionServer from "@/components/NewsSectionServer";
 import GallerySectionServer from "@/components/GallerySectionServer";
 import CommitteeServer from "@/components/CommitteeServer";
 import SponsorsSection from "@/components/SponsorsSection";
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (

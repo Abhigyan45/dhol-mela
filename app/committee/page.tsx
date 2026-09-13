@@ -2,6 +2,7 @@
 // import { PrismaClient } from "@prisma/client";
 
 // const prisma = new PrismaClient();
+// export const dynamic = "force-dynamic";
 
 // export default async function CommitteePage() {
 //   const members = await prisma.member.findMany({ orderBy: { order: "asc" } });
@@ -31,6 +32,7 @@
 
 import Navbar from "@/components/Navbar";
 import CommitteeServer from "@/components/CommitteeServer";
+export const dynamic = "force-dynamic";
 
 export default function CommitteePage() {
   return (
