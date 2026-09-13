@@ -11,10 +11,12 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  const { url, caption, year, category } = await req.json();
+  const { url, type, caption, year, category } = await req.json();
   if (!url || !year || !category) {
     return NextResponse.json({ error: "URL, year, and category are required" }, { status: 400 });
   }
-  const photo = await prisma.galleryPhoto.create({ data: { url, caption, year, category } });
+  const photo = await prisma.galleryPhoto.create({
+    data: { url, type: type ?? "photo", caption, year, category },
+  });
   return NextResponse.json(photo);
 }

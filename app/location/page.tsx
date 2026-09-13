@@ -8,7 +8,7 @@ const LNG = 84.279223;
 
 const content = {
   en: { heading: "📍 Location", sub: "Songadhwa, Bairagitola village, Gopalganj district, Bihar", directions: "Get Directions" },
-  hi: { heading: "📍 स्थान", sub: "सोंगढ़वा, बैरागीटोला गांव, गोपालगंज जिला, बिहार", directions: "दिशा-निर्देश प्राप्त करें" },
+  hi: { heading: "📍 स्थान", sub: "सोनगढ़वा, बैरागीटोला गांव, गोपालगंज जिला, बिहार", directions: "दिशा-निर्देश प्राप्त करें" },
 };
 
 export default function LocationPage() {

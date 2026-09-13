@@ -2,14 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-const MELA_DATE = new Date("2026-10-15T00:00:00+05:30"); // IST
-
-function getTimeLeft() {
+function getTimeLeft(melaDate: Date) {
   const now = new Date();
-  const diff = MELA_DATE.getTime() - now.getTime();
-
+  const diff = melaDate.getTime() - now.getTime();
   if (diff <= 0) return null;
-
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
@@ -19,16 +15,26 @@ function getTimeLeft() {
 }
 
 export default function Countdown() {
+  const [melaDate, setMelaDate] = useState<Date | null>(null);
   const [timeLeft, setTimeLeft] = useState<ReturnType<typeof getTimeLeft>>(null);
 
   useEffect(() => {
-    setTimeLeft(getTimeLeft());
-    const interval = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
-    return () => clearInterval(interval);
+    async function loadDate() {
+      const res = await fetch("/api/mela-settings");
+      const data = await res.json();
+      if (data.melaDate) setMelaDate(new Date(data.melaDate));
+    }
+    loadDate();
   }, []);
 
+  useEffect(() => {
+    if (!melaDate) return;
+    setTimeLeft(getTimeLeft(melaDate));
+    const interval = setInterval(() => setTimeLeft(getTimeLeft(melaDate)), 1000);
+    return () => clearInterval(interval);
+  }, [melaDate]);
+
+  if (!melaDate) return null; // still loading the date
   if (!timeLeft) {
     return <p className="text-orange-600 font-semibold text-lg">🎉 The Mela is here!</p>;
   }

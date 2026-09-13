@@ -38,13 +38,13 @@ const content = {
     emergencyHeading: "🚨 Emergency Contact Information",
     emergencyIntro: "For assistance, crowd control, or medical emergencies, please reach out to our village control booth:",
     emergencyCommittee: "Songadhwa Akhra No. 7 Committee:",
-    emergencyNote: "(replace with actual number)",
+    emergencyNote: "",
     emergencyPolice: "Local Police Helpline (Gopalganj):",
     emergencyAmbulance: "Ambulance Services:",
   },
   hi: {
-    title: "🥁 सोंगढ़वा अखाड़ा नंबर 7 ढोल मेला के बारे में",
-    intro: "सोंगढ़वा अखाड़ा नंबर 7 ढोल मेला, गोपालगंज के आधिकारिक पृष्ठ पर आपका स्वागत है। यह वार्षिक उत्सव हमारे गांव का गौरव है, जो भक्ति, वीरता और समुदाय की भावना को एक साथ लाता है। सोंगढ़वा अखाड़ा नंबर 7 द्वारा आयोजित, हमारा ढोल मेला अपने भव्य डोल (पवित्र झांकियों), उच्च-ऊर्जा पारंपरिक मार्शल आर्ट्स और जीवंत सांस्कृतिक उत्सवों के लिए पूरे गोपालगंज जिले में प्रसिद्ध है।",
+    title: "🥁 सोनगढ़वा अखाड़ा नंबर 7 ढोल मेला के बारे में",
+    intro: "सोनगढ़वा अखाड़ा नंबर 7 ढोल मेला, गोपालगंज के आधिकारिक पृष्ठ पर आपका स्वागत है। यह वार्षिक उत्सव हमारे गांव का गौरव है, जो भक्ति, वीरता और समुदाय की भावना को एक साथ लाता है। सोनगढ़वा अखाड़ा नंबर 7 द्वारा आयोजित, हमारा ढोल मेला अपने भव्य डोल (पवित्र झांकियों), उच्च-ऊर्जा पारंपरिक मार्शल आर्ट्स और जीवंत सांस्कृतिक उत्सवों के लिए पूरे গोपालगंज জिले में प्रसिद्ध है।",
     timesHeading: "⏰ खुलने और बंद होने का समय",
     timesIntro: "हमारा गांव मेला एक पारंपरिक दो-दिवसीय कार्यक्रम का पालन करता है, जो उच्च-ऊर्जा रात्रि जुलूस से दिन के भरे-पूरे मेले में परिवर्तित होता है।",
     day1: "दिन 1 (भव्य जुलूस):",
@@ -53,7 +53,7 @@ const content = {
     day2desc: "स्टॉल और पारिवारिक मनोरंजन सुबह 10:00 बजे से शुरू होकर रात 10:00 बजे तक चलते हैं।",
     religiousHeading: "🙏 धार्मिक कार्यक्रम",
     religious1: "महावीरी अखाड़ा जुलूस:",
-    religious1desc: "मेले का मुख्य आध्यात्मिक तत्व — सोंगढ़वा अखाड़ा नंबर 7 भगवान हनुमान का सम्मान करने के लिए पवित्र झंडे (निशान) लाता है।",
+    religious1desc: "मेले का मुख्य आध्यात्मिक तत्व — सोनगढ़वा अखाड़ा नंबर 7 भगवान हनुमान का सम्मान करने के लिए पवित्र झंडे (निशान) लाता है।",
     religious2: "पवित्र डोल:",
     religious2desc: "सुंदर सजाए गए, विशाल संरचनाएं जो स्थानीय देवताओं का प्रतिनिधित्व करती हैं, गांव की गलियों में परेड की जाती हैं।",
     dholHeading: "🥁 ढोल और संगीत कार्यक्रम",
@@ -75,8 +75,8 @@ const content = {
     facility3desc: "गांव के प्रवेश बिंदुओं के बाहरी इलाके में दोपहिया और चारपहिया वाहनों के लिए मुफ्त पार्किंग की व्यवस्था।",
     emergencyHeading: "🚨 आपातकालीन संपर्क जानकारी",
     emergencyIntro: "सहायता, भीड़ नियंत्रण, या चिकित्सा आपात स्थिति के लिए, कृपया हमारे गांव नियंत्रण बूथ से संपर्क करें:",
-    emergencyCommittee: "सोंगढ़वा अखाड़ा नंबर 7 समिति:",
-    emergencyNote: "(वास्तविक नंबर से बदलें)",
+    emergencyCommittee: "सोनगढ़वा अखाड़ा नंबर 7 समिति:",
+    emergencyNote: "",
     emergencyPolice: "स्थानीय पुलिस हेल्पलाइन (गोपालगंज):",
     emergencyAmbulance: "एम्बुलेंस सेवाएं:",
   },
@@ -141,7 +141,7 @@ export default function AboutMelaPage() {
           <h2 className="text-2xl font-bold mb-3">{t.emergencyHeading}</h2>
           <p className="text-gray-700 mb-3">{t.emergencyIntro}</p>
           <ul className="space-y-1 text-gray-700">
-            <li><strong>{t.emergencyCommittee}</strong> <span className="text-red-600 font-mono">+91-XXXXX-XXXXX</span> <span className="text-xs text-gray-500">{t.emergencyNote}</span></li>
+            <li><strong>{t.emergencyCommittee}</strong> <span className="text-red-600 font-mono">+91-77829-59352</span> <span className="text-xs text-gray-500">{t.emergencyNote}</span></li>
             <li><strong>{t.emergencyPolice}</strong> 112 / 100</li>
             <li><strong>{t.emergencyAmbulance}</strong> 102</li>
           </ul>

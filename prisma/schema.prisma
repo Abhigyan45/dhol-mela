@@ -65,9 +65,10 @@ model ArchivePhoto {
 model GalleryPhoto {
   id        String   @id @default(cuid())
   url       String
+  type      String   @default("photo") // "photo" or "video"
   caption   String?
   year      Int
-  category  String   // e.g. "Opening", "Dhol Programme", "Cultural", "Religious", "Crowd", "Decoration", "Committee", "Village"
+  category  String
   createdAt DateTime @default(now())
 }
 model ContactMessage {
@@ -106,3 +107,8 @@ model Sponsor {
   order        Int      @default(0)
   createdAt    DateTime @default(now())
 }
+model MelaSettings {
+  id       String   @id @default("main")
+  melaDate DateTime
+}
+

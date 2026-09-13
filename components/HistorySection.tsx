@@ -11,13 +11,26 @@ export default function HistorySection() {
   const { lang } = useLanguage();
   const t = content[lang];
 
-  return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
+//   return (
+//   <section className="bg-amber-50 py-16">
+//     <div className="max-w-4xl mx-auto px-4">
+//       <h2 className="text-3xl font-bold mb-4">{t.heading}</h2>
+//       <p className="text-gray-600 leading-relaxed">{t.body}</p>
+//       <a href="/history" className="inline-block mt-4 text-orange-600 font-medium hover:underline">
+//         {t.link}
+//       </a>
+//     </div>
+//   </section>
+// );
+return (
+  <section className="bg-amber-50 py-16">
+    <div className="max-w-4xl mx-auto px-4">
       <h2 className="text-3xl font-bold mb-4">{t.heading}</h2>
       <p className="text-gray-600 leading-relaxed">{t.body}</p>
       <a href="/history" className="inline-block mt-4 text-orange-600 font-medium hover:underline">
         {t.link}
       </a>
-    </section>
-  );
+    </div>
+  </section>
+);
 }

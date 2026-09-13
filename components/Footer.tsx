@@ -10,14 +10,14 @@ const WHATSAPP_NUMBER = "91XXXXXXXXXX";
 
 const content = {
   en: {
-    address: "Songadhwa, Bairagitola, Kuchaikote block, Gopalganj district, Bihar — 841425",
+    address: "Songadhwa, Bairagitola, Phulwaria block, Gopalganj district, Bihar — 841425",
     quickLinks: "Quick Links",
     connect: "Connect With Us",
     rights: "All rights reserved.",
     links: { about: "About Mela", history: "History", schedule: "Schedule", gallery: "Gallery", donate: "Donate", contact: "Contact" },
   },
   hi: {
-    address: "सोंगढ़वा, बैरागीटोला, कुचायकोट प्रखंड, गोपालगंज जिला, बिहार — 841425",
+    address: "सोनगढ़वा, बैरागीटोला, फुलवारिया प्रखंड, गोपालगंज जिला, बिहार — 841425",
     quickLinks: "त्वरित लिंक",
     connect: "हमसे जुड़ें",
     rights: "सर्वाधिकार सुरक्षित।",

@@ -15,6 +15,7 @@ export default function AdminMembers() {
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
+  const [photoUrl, setPhotoUrl] = useState("");
   const [order, setOrder] = useState(0);
   const [editingId, setEditingId] = useState<string | null>(null);
 
@@ -32,6 +33,7 @@ export default function AdminMembers() {
   function resetForm() {
     setName("");
     setRole("");
+    setPhotoUrl("");
     setOrder(0);
     setEditingId(null);
   }
@@ -42,13 +44,13 @@ export default function AdminMembers() {
       await fetch(`/api/admin/members/${editingId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, role, order }),
+        body: JSON.stringify({ name, role, photoUrl, order }),
       });
     } else {
       await fetch("/api/admin/members", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, role, order }),
+        body: JSON.stringify({ name, role, photoUrl, order }),
       });
     }
     resetForm();
@@ -59,6 +61,7 @@ export default function AdminMembers() {
     setEditingId(item.id);
     setName(item.name);
     setRole(item.role);
+    setPhotoUrl(item.photoUrl ?? "");
     setOrder(item.order);
   }
 
@@ -76,6 +79,10 @@ export default function AdminMembers() {
         <h2 className="font-semibold">{editingId ? "Edit Member" : "Add Member"}</h2>
         <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} className="w-full border rounded-lg px-3 py-2" required />
         <input type="text" placeholder="Role (e.g. President)" value={role} onChange={(e) => setRole(e.target.value)} className="w-full border rounded-lg px-3 py-2" required />
+        <input type="text" placeholder="Photo URL (optional — paste a link from Google Photos, Imgur, etc.)" value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} className="w-full border rounded-lg px-3 py-2" />
+        {photoUrl && (
+          <img src={photoUrl} alt="Preview" className="w-16 h-16 rounded-full object-cover border" />
+        )}
         <input type="number" placeholder="Display order (0 = first)" value={order} onChange={(e) => setOrder(Number(e.target.value))} className="w-full border rounded-lg px-3 py-2" />
         <div className="flex gap-3">
           <button className="bg-orange-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-orange-700">
@@ -97,9 +104,16 @@ export default function AdminMembers() {
         <div className="space-y-3">
           {items.map((item) => (
             <div key={item.id} className="border rounded-xl p-4 flex justify-between items-center gap-4">
-              <div>
-                <p className="font-semibold">{item.name}</p>
-                <p className="text-sm text-gray-500">{item.role} · order {item.order}</p>
+              <div className="flex items-center gap-3">
+                {item.photoUrl ? (
+                  <img src={item.photoUrl} alt={item.name} className="w-12 h-12 rounded-full object-cover" />
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-gray-200" />
+                )}
+                <div>
+                  <p className="font-semibold">{item.name}</p>
+                  <p className="text-sm text-gray-500">{item.role} · order {item.order}</p>
+                </div>
               </div>
               <div className="flex gap-2 shrink-0">
                 <button onClick={() => startEdit(item)} className="text-sm px-3 py-1 rounded-lg border hover:bg-gray-50">Edit</button>
