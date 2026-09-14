@@ -20,15 +20,15 @@ model Admin {
   createdAt DateTime @default(now())
 }
 
-model News {
-  id        String   @id @default(cuid())
-  title     String
-  summary   String
-  content   String?
-  published Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
+//model News {
+  //id        String   @id @default(cuid())
+  //title     String
+  //summary   String
+  //content   String?
+  //published Boolean  @default(true)
+  //createdAt DateTime @default(now())
+  //updatedAt DateTime @updatedAt
+//}
 
 model Notification {
   id        String   @id @default(cuid())
@@ -111,4 +111,14 @@ model MelaSettings {
   id       String   @id @default("main")
   melaDate DateTime
 }
-
+model News {
+  id        String   @id @default(cuid())
+  title     String
+  summary   String
+  content   String?
+  published Boolean  @default(true)
+  mediaType String?  // "photo" | "video" | "youtube"
+  mediaUrl  String?  // Blob URL for photo/video, or YouTube video ID
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

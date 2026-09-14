@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
 
 const content = {
-  en: { heading: "Live Updates", sub: "Real-time updates from the mela ground, October 15, 2026.", empty: "No live updates yet — check back once the mela begins." },
-  hi: { heading: "लाइव अपडेट", sub: "15 अक्टूबर 2026 को मेला स्थल से रीयल-टाइम अपडेट।", empty: "अभी कोई लाइव अपडेट नहीं — मेला शुरू होने पर देखें।" },
+  en: { heading: "Live Updates", sub: "Real-time updates from the mela ground, October 29-30, 2026.", empty: "No live updates yet — check back once the mela begins." },
+  hi: { heading: "लाइव अपडेट", sub: "29-30 अक्टूबर 2026 को मेला स्थल से रीयल-टाइम अपडेट।", empty: "अभी कोई लाइव अपडेट नहीं — मेला शुरू होने पर देखें।" },
 };
 
 type Update = { id: string; timeLabel: string; message: string };

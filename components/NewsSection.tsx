@@ -3,8 +3,8 @@
 import { useLanguage } from "@/context/LanguageContext";
 
 const content = {
-  en: { heading: "📰 Latest Mela News", empty: "No news yet — check back soon." },
-  hi: { heading: "📰 ताज़ा मेला समाचार", empty: "अभी कोई समाचार नहीं — जल्द ही देखें।" },
+  en: { heading: "📰 Latest Mela News", empty: "No news yet — check back soon.", link: "View more news →" },
+  hi: { heading: "📰 ताज़ा मेला समाचार", empty: "अभी कोई समाचार नहीं — जल्द ही देखें।", link: "और समाचार देखें →" },
 };
 
 type NewsItem = { id: string; title: string; summary: string; createdAt: string | Date };
@@ -31,6 +31,9 @@ export default function NewsSection({ newsItems }: { newsItems: NewsItem[] }) {
           ))}
         </div>
       )}
+      <a href="/news" className="inline-block mt-4 text-orange-600 font-medium hover:underline">
+        {t.link}
+      </a>
     </section>
   );
 }
