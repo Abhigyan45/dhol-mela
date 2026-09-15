@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
+import FadeIn from "@/components/FadeIn";
 
 const content = {
   en: {
@@ -76,11 +77,13 @@ export default function VillagePage() {
     <main>
       <Navbar />
       <section className="max-w-3xl mx-auto px-4 py-16 space-y-12">
+        <FadeIn>
         <div>
           <h1 className="text-3xl font-bold mb-4">{t.title}</h1>
           <p className="text-gray-700 leading-relaxed">{t.intro}</p>
         </div>
-
+        </FadeIn>
+        <FadeIn>
         <div>
           <h2 className="text-2xl font-bold mb-3">{t.popHeading}</h2>
           <ul className="space-y-2 text-gray-700">
@@ -89,7 +92,8 @@ export default function VillagePage() {
             <li><strong>{t.pop3}</strong> {t.pop3desc}</li>
           </ul>
         </div>
-
+        </FadeIn>
+        <FadeIn>
         <div>
           <h2 className="text-2xl font-bold mb-3">{t.landmarksHeading}</h2>
           <h3 className="font-semibold mb-2">{t.spiritual}</h3>
@@ -103,7 +107,8 @@ export default function VillagePage() {
             <li><strong>{t.school2}</strong> {t.school2desc}</li>
           </ul>
         </div>
-
+        </FadeIn>
+        <FadeIn>
         <div className="bg-orange-50 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">{t.proudHeading}</h2>
           <ul className="space-y-3 text-gray-700">
@@ -112,6 +117,7 @@ export default function VillagePage() {
             <li><strong>{t.proud3}</strong> {t.proud3desc}</li>
           </ul>
         </div>
+        </FadeIn>
       </section>
     </main>
   );

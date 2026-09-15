@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
+import FadeIn from "@/components/FadeIn";
 
 const content = {
   en: { heading: "🔍 Search", placeholder: "Search news, gallery, archive...", button: "Search", searching: "Searching...", noResults: (q: string) => `No results found for "${q}".`, news: "📰 News", gallery: "📸 Gallery", archive: "🗂️ Archive" },
@@ -32,24 +33,31 @@ export default function SearchPage() {
   const totalResults = results ? results.news.length + results.gallery.length + results.archive.length : 0;
 
   return (
-    <main>
-      <Navbar />
-      <section className="max-w-3xl mx-auto px-4 py-16">
-        <h1 className="text-3xl font-bold mb-6">{t.heading}</h1>
-        <form onSubmit={handleSearch} className="flex gap-3 mb-8">
-          <input type="text" placeholder={t.placeholder} value={q} onChange={(e) => setQ(e.target.value)} className="flex-1 border rounded-lg px-4 py-2" />
-          <button className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700">{t.button}</button>
-        </form>
+  <main>
+    <Navbar />
+    <section className="max-w-3xl mx-auto px-4 py-16">
+      <FadeIn>
+        <div>
+          <h1 className="text-3xl font-bold mb-6">{t.heading}</h1>
+          <form onSubmit={handleSearch} className="flex gap-3 mb-8">
+            <input type="text" placeholder={t.placeholder} value={q} onChange={(e) => setQ(e.target.value)} className="flex-1 border rounded-lg px-4 py-2" />
+            <button className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700">{t.button}</button>
+          </form>
+        </div>
+      </FadeIn>
 
-        {loading && <p className="text-gray-500">{t.searching}</p>}
+      {loading && <p className="text-gray-500">{t.searching}</p>}
 
-        {results && !loading && (
-          <>
-            {totalResults === 0 ? (
+      {results && !loading && (
+        <>
+          {totalResults === 0 ? (
+            <FadeIn>
               <p className="text-gray-500">{t.noResults(q)}</p>
-            ) : (
-              <div className="space-y-10">
-                {results.news.length > 0 && (
+            </FadeIn>
+          ) : (
+            <div className="space-y-10">
+              {results.news.length > 0 && (
+                <FadeIn>
                   <div>
                     <h2 className="font-bold text-lg mb-3">{t.news}</h2>
                     <div className="space-y-2">
@@ -61,8 +69,10 @@ export default function SearchPage() {
                       ))}
                     </div>
                   </div>
-                )}
-                {results.gallery.length > 0 && (
+                </FadeIn>
+              )}
+              {results.gallery.length > 0 && (
+                <FadeIn>
                   <div>
                     <h2 className="font-bold text-lg mb-3">{t.gallery}</h2>
                     <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
@@ -71,8 +81,10 @@ export default function SearchPage() {
                       ))}
                     </div>
                   </div>
-                )}
-                {results.archive.length > 0 && (
+                </FadeIn>
+              )}
+              {results.archive.length > 0 && (
+                <FadeIn>
                   <div>
                     <h2 className="font-bold text-lg mb-3">{t.archive}</h2>
                     <div className="space-y-2">
@@ -84,12 +96,13 @@ export default function SearchPage() {
                       ))}
                     </div>
                   </div>
-                )}
-              </div>
-            )}
-          </>
-        )}
-      </section>
-    </main>
-  );
+                </FadeIn>
+              )}
+            </div>
+          )}
+        </>
+      )}
+    </section>
+  </main>
+);
 }

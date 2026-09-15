@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
+import FadeIn from "@/components/FadeIn";
 
 const content = {
   en: {
@@ -47,26 +48,35 @@ export default function VolunteerPage() {
   }
 
   return (
-    <main>
-      <Navbar />
-      <section className="max-w-xl mx-auto px-4 py-16">
-        <h1 className="text-3xl font-bold mb-2">{t.heading}</h1>
-        <p className="text-gray-600 mb-8">{t.sub}</p>
-        {status === "sent" ? (
-          <div className="border rounded-xl p-6 bg-green-50 text-green-700 text-center">{t.thanks}</div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input type="text" placeholder={t.name} value={name} onChange={(e) => setName(e.target.value)} className="w-full border rounded-lg px-4 py-2" required />
-            <input type="tel" placeholder={t.phone} value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full border rounded-lg px-4 py-2" required />
-            <input type="text" placeholder={t.village} value={village} onChange={(e) => setVillage(e.target.value)} className="w-full border rounded-lg px-4 py-2" />
-            <textarea placeholder={t.interest} value={interest} onChange={(e) => setInterest(e.target.value)} className="w-full border rounded-lg px-4 py-2 h-24" />
-            <button type="submit" disabled={status === "sending"} className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 disabled:opacity-50">
-              {status === "sending" ? t.submitting : t.submit}
-            </button>
-            {status === "error" && <p className="text-red-600 text-sm">{t.error}</p>}
-          </form>
-        )}
-      </section>
-    </main>
-  );
+  <main>
+    <Navbar />
+    <section className="max-w-xl mx-auto px-4 py-16">
+      <FadeIn>
+        <div>
+          <h1 className="text-3xl font-bold mb-2">{t.heading}</h1>
+          <p className="text-gray-600 mb-8">{t.sub}</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn>
+        <div>
+          {status === "sent" ? (
+            <div className="border rounded-xl p-6 bg-green-50 text-green-700 text-center">{t.thanks}</div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input type="text" placeholder={t.name} value={name} onChange={(e) => setName(e.target.value)} className="w-full border rounded-lg px-4 py-2" required />
+              <input type="tel" placeholder={t.phone} value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full border rounded-lg px-4 py-2" required />
+              <input type="text" placeholder={t.village} value={village} onChange={(e) => setVillage(e.target.value)} className="w-full border rounded-lg px-4 py-2" />
+              <textarea placeholder={t.interest} value={interest} onChange={(e) => setInterest(e.target.value)} className="w-full border rounded-lg px-4 py-2 h-24" />
+              <button type="submit" disabled={status === "sending"} className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 disabled:opacity-50">
+                {status === "sending" ? t.submitting : t.submit}
+              </button>
+              {status === "error" && <p className="text-red-600 text-sm">{t.error}</p>}
+            </form>
+          )}
+        </div>
+      </FadeIn>
+    </section>
+  </main>
+);
 }

@@ -36,4 +36,9 @@ export default function GalleryItem({ item }: { item: Item }) {
   return (
     <img src={item.url} alt={item.caption ?? ""} className="w-full aspect-square object-cover rounded-xl" />
   );
+  return (
+  <div className="w-full aspect-square rounded-xl overflow-hidden">
+    <img src={item.url} alt={item.caption ?? ""} className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+  </div>
+);
 }

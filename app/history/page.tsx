@@ -1,7 +1,7 @@
 "use client";
-
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
+import FadeIn from "@/components/FadeIn";
 
 const content = {
   en: {
@@ -60,33 +60,49 @@ export default function HistoryPage() {
     <main>
       <Navbar />
       <section className="max-w-3xl mx-auto px-4 py-16">
-        <h1 className="text-3xl font-bold mb-6">{t.title}</h1>
-        <p className="text-gray-700 leading-relaxed mb-8">{t.intro}</p>
+        <FadeIn>
+          <div>
+            <h1 className="text-3xl font-bold mb-6">{t.title}</h1>
+            <p className="text-gray-700 leading-relaxed mb-8">{t.intro}</p>
+          </div>
+        </FadeIn>
 
-        <h2 className="text-2xl font-bold mb-3">{t.whenHeading}</h2>
-        <p className="text-gray-700 leading-relaxed mb-3">
-          {t.whenBody} <span className="text-red-600 font-semibold">{t.yearPlaceholder}</span> {t.whenBody2}
-        </p>
-        <ul className="space-y-2 text-gray-700 list-disc list-inside mb-8">
-          <li><strong>{t.vision}</strong> {t.visionDesc} <span className="text-red-600">{t.founderPlaceholder}</span>.</li>
-          <li><strong>{t.purpose}</strong> {t.purposeDesc}</li>
-        </ul>
-        <p className="text-gray-700 leading-relaxed mb-12">{t.growthNote}</p>
+        <FadeIn>
+          <div>
+            <h2 className="text-2xl font-bold mb-3">{t.whenHeading}</h2>
+            <p className="text-gray-700 leading-relaxed mb-3">
+              {t.whenBody} <span className="text-red-600 font-semibold">{t.yearPlaceholder}</span> {t.whenBody2}
+            </p>
+            <ul className="space-y-2 text-gray-700 list-disc list-inside mb-8">
+              <li><strong>{t.vision}</strong> {t.visionDesc} <span className="text-red-600">{t.founderPlaceholder}</span>.</li>
+              <li><strong>{t.purpose}</strong> {t.purposeDesc}</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mb-12">{t.growthNote}</p>
+          </div>
+        </FadeIn>
 
-        <h2 className="text-2xl font-bold mb-6">{t.milestonesHeading}</h2>
-        <div className="relative border-l-2 border-orange-200 pl-8 space-y-10 mb-12">
-          {t.milestones.map((m, i) => (
-            <div key={i} className="relative">
-              <span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-orange-600 border-4 border-white" />
-              <p className="text-orange-600 font-semibold text-sm mb-1">{m.year}</p>
-              <h3 className="text-lg font-bold mb-1">{m.title}</h3>
-              <p className="text-gray-600 text-sm">{m.description}</p>
+        <FadeIn>
+          <div>
+            <h2 className="text-2xl font-bold mb-6">{t.milestonesHeading}</h2>
+            <div className="relative border-l-2 border-orange-200 pl-8 space-y-10 mb-12">
+              {t.milestones.map((m, i) => (
+                <div key={i} className="relative">
+                  <span className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-orange-600 border-4 border-white" />
+                  <p className="text-orange-600 font-semibold text-sm mb-1">{m.year}</p>
+                  <h3 className="text-lg font-bold mb-1">{m.title}</h3>
+                  <p className="text-gray-600 text-sm">{m.description}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        </FadeIn>
 
-        <h2 className="text-2xl font-bold mb-3">{t.legacyHeading}</h2>
-        <p className="text-gray-700 leading-relaxed">{t.legacyBody}</p>
+        <FadeIn>
+          <div>
+            <h2 className="text-2xl font-bold mb-3">{t.legacyHeading}</h2>
+            <p className="text-gray-700 leading-relaxed">{t.legacyBody}</p>
+          </div>
+        </FadeIn>
       </section>
     </main>
   );

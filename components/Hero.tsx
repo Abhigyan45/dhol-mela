@@ -34,25 +34,34 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative z-10">
-        <p className="text-orange-400 font-semibold tracking-wide uppercase text-sm mb-3">{t.tagline}</p>
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white">
-          Songadhwa Akhra No-7 Dol Mela {melaDate ? melaDate.getFullYear() : new Date().getFullYear()}
-        </h1>
-        {formattedDate && <p className="text-gray-200 mb-2">📅 {formattedDate}</p>}
-        <p className="text-gray-200 mb-8">📍 Songadhwa, Bairagitola, Gopalganj, Bihar</p>
+       <p className="hero-fade-in text-orange-400 font-semibold tracking-wide uppercase text-sm mb-3" style={{ animationDelay: "0.1s" }}>
+       {t.tagline}
+       </p>
+  <h1 className="hero-fade-in text-4xl md:text-6xl font-extrabold mb-4 text-white" style={{ animationDelay: "0.25s" }}>
+    Songadhwa Akhra No-7 Dol Mela {melaDate ? melaDate.getFullYear() : new Date().getFullYear()}
+  </h1>
+  {formattedDate && (
+    <p className="hero-fade-in text-gray-200 mb-2" style={{ animationDelay: "0.4s" }}>
+      📅 {formattedDate}
+    </p>
+  )}
+  <p className="hero-fade-in text-gray-200 mb-8" style={{ animationDelay: "0.5s" }}>
+    📍 Songadhwa, Bairagitola, Gopalganj, Bihar
+  </p>
 
-        <div className="mb-8">
-          <Countdown />
-        </div>
+  <div className="hero-fade-in mb-8" style={{ animationDelay: "0.65s" }}>
+    <Countdown />
+  </div>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          <a href="/about" className="px-6 py-3 rounded-full border border-white/50 text-white font-medium hover:bg-white/10 transition-colors">{t.about}</a>
-          <a href="/gallery" className="px-6 py-3 rounded-full border border-white/50 text-white font-medium hover:bg-white/10 transition-colors">{t.gallery}</a>
-        </div>
-        <div className="mt-8">
-          <a href="/donate" className="inline-block px-8 py-3 rounded-full bg-orange-600 text-white font-bold hover:bg-orange-700 transition-colors">{t.donate}</a>
-        </div>
-      </div>
+  <div className="hero-fade-in flex flex-wrap justify-center gap-4" style={{ animationDelay: "0.8s" }}>
+    <a href="/about" className="px-6 py-3 rounded-full border border-white/50 text-white font-medium hover:bg-white/10 transition-colors">{t.about}</a>
+    <a href="/gallery" className="px-6 py-3 rounded-full border border-white/50 text-white font-medium hover:bg-white/10 transition-colors">{t.gallery}</a>
+  </div>
+  <div className="hero-fade-in mt-8" style={{ animationDelay: "0.95s" }}>
+    <a href="/donate" className="inline-block px-8 py-3 rounded-full bg-orange-600 text-white font-bold hover:bg-orange-700 transition-colors">{t.donate}</a>
+  </div>
+</div>
+      
     </section>
   );
 }

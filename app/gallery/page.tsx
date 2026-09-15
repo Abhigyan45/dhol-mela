@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { PrismaClient } from "@prisma/client";
 import GalleryPageContent from "@/components/GalleryPageContent";
+import FadeIn from "@/components/FadeIn";
 
 
 const prisma = new PrismaClient();
@@ -14,7 +15,9 @@ export default async function GalleryPage() {
   return (
     <main>
       <Navbar />
-      <GalleryPageContent photos={photos} />
+      <FadeIn>
+        <GalleryPageContent photos={photos} />
+      </FadeIn>
     </main>
   );
 }

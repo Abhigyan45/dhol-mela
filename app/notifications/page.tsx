@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { PrismaClient } from "@prisma/client";
 import NotificationsPageContent from "@/components/NotificationsPageContent";
+import FadeIn from "@/components/FadeIn";
 
 const prisma = new PrismaClient();
 
@@ -13,7 +14,9 @@ export default async function NotificationsPage() {
   return (
     <main>
       <Navbar />
-      <NotificationsPageContent notifications={notifications} />
+      <FadeIn>
+        <NotificationsPageContent notifications={notifications} />
+      </FadeIn>
     </main>
   );
 }

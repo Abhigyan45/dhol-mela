@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
+import FadeIn from "@/components/FadeIn";
 
 const content = {
   en: {
@@ -89,55 +90,64 @@ export default function AboutMelaPage() {
   return (
     <main>
       <Navbar />
-      <section className="max-w-3xl mx-auto px-4 py-16 space-y-12">
-        <div>
-          <h1 className="text-3xl font-bold mb-4">{t.title}</h1>
-          <p className="text-gray-700 leading-relaxed">{t.intro}</p>
-        </div>
+        <section className="max-w-3xl mx-auto px-4 py-16 space-y-12">
+        <FadeIn>
+          <div>
+            <h1 className="text-3xl font-bold mb-4">{t.title}</h1>
+            <p className="text-gray-700 leading-relaxed">{t.intro}</p>
+          </div>
+        </FadeIn>
 
-        <div>
-          <h2 className="text-2xl font-bold mb-3">{t.timesHeading}</h2>
-          <p className="text-gray-700 mb-3">{t.timesIntro}</p>
-          <ul className="space-y-2 text-gray-700">
-            <li><strong>{t.day1}</strong> {t.day1desc}</li>
-            <li><strong>{t.day2}</strong> {t.day2desc}</li>
-          </ul>
-        </div>
+        <FadeIn>
+          <div>
+            <h2 className="text-2xl font-bold mb-3">{t.timesHeading}</h2>
+            <p className="text-gray-700 mb-3">{t.timesIntro}</p>
+            <ul className="space-y-2 text-gray-700">
+              <li><strong>{t.day1}</strong> {t.day1desc}</li>
+              <li><strong>{t.day2}</strong> {t.day2desc}</li>
+            </ul>
+          </div>
+        </FadeIn>
 
-        <div>
-          <h2 className="text-2xl font-bold mb-3">{t.religiousHeading}</h2>
-          <ul className="space-y-2 text-gray-700 list-disc list-inside">
-            <li><strong>{t.religious1}</strong> {t.religious1desc}</li>
-            <li><strong>{t.religious2}</strong> {t.religious2desc}</li>
-          </ul>
-        </div>
-
-        <div>
+        <FadeIn>
+          <div>
+            <h2 className="text-2xl font-bold mb-3">{t.religiousHeading}</h2>
+            <ul className="space-y-2 text-gray-700 list-disc list-inside">
+              <li><strong>{t.religious1}</strong> {t.religious1desc}</li>
+              <li><strong>{t.religious2}</strong> {t.religious2desc}</li>
+            </ul>
+          </div>
+        </FadeIn>
+        <FadeIn>
+          <div>
           <h2 className="text-2xl font-bold mb-3">{t.dholHeading}</h2>
           <ul className="space-y-2 text-gray-700 list-disc list-inside">
             <li><strong>{t.dhol1}</strong> {t.dhol1desc}</li>
             <li><strong>{t.dhol2}</strong> {t.dhol2desc}</li>
           </ul>
-        </div>
-
-        <div>
+          </div>
+        </FadeIn>
+        <FadeIn>
+          <div>
           <h2 className="text-2xl font-bold mb-3">{t.culturalHeading}</h2>
           <ul className="space-y-2 text-gray-700 list-disc list-inside">
             <li><strong>{t.cultural1}</strong> {t.cultural1desc}</li>
             <li><strong>{t.cultural2}</strong> {t.cultural2desc}</li>
           </ul>
-        </div>
-
-        <div>
+          </div>
+        </FadeIn>
+        <FadeIn>
+          <div>
           <h2 className="text-2xl font-bold mb-3">{t.facilitiesHeading}</h2>
           <ul className="space-y-2 text-gray-700 list-disc list-inside">
             <li><strong>{t.facility1}</strong> {t.facility1desc}</li>
             <li><strong>{t.facility2}</strong> {t.facility2desc}</li>
             <li><strong>{t.facility3}</strong> {t.facility3desc}</li>
           </ul>
-        </div>
-
-        <div className="bg-orange-50 rounded-xl p-6">
+          </div>
+        </FadeIn>
+        <FadeIn>
+          <div>
           <h2 className="text-2xl font-bold mb-3">{t.emergencyHeading}</h2>
           <p className="text-gray-700 mb-3">{t.emergencyIntro}</p>
           <ul className="space-y-1 text-gray-700">
@@ -145,7 +155,8 @@ export default function AboutMelaPage() {
             <li><strong>{t.emergencyPolice}</strong> 112 / 100</li>
             <li><strong>{t.emergencyAmbulance}</strong> 102</li>
           </ul>
-        </div>
+          </div>
+        </FadeIn>
       </section>
     </main>
   );

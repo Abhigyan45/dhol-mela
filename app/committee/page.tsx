@@ -32,13 +32,17 @@
 
 import Navbar from "@/components/Navbar";
 import CommitteeServer from "@/components/CommitteeServer";
+import FadeIn from "@/components/FadeIn";
 export const dynamic = "force-dynamic";
+
 
 export default function CommitteePage() {
   return (
     <main>
       <Navbar />
-      <CommitteeServer />
+      <FadeIn>
+        <CommitteeServer />
+      </FadeIn>
     </main>
   );
 }

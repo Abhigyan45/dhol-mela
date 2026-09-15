@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { PrismaClient } from "@prisma/client";
 import NewsPageContent from "@/components/NewsPageContent";
+import FadeIn from "@/components/FadeIn";
 
 
 const prisma = new PrismaClient();
@@ -15,7 +16,9 @@ export default async function NewsPage() {
   return (
     <main>
       <Navbar />
-      <NewsPageContent newsItems={newsItems} />
+      <FadeIn>
+        <NewsPageContent newsItems={newsItems} />
+      </FadeIn>
     </main>
   );
 }

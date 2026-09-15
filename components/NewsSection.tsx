@@ -21,7 +21,7 @@ export default function NewsSection({ newsItems }: { newsItems: NewsItem[] }) {
       ) : (
         <div className="grid md:grid-cols-2 gap-6">
           {newsItems.map((item) => (
-            <div key={item.id} className="border rounded-xl p-5 hover:shadow-md transition-shadow">
+            <div key={item.id} className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
               <p className="text-sm text-gray-400 mb-1">
                 {new Date(item.createdAt).toLocaleDateString()}
               </p>

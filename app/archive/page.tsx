@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { PrismaClient } from "@prisma/client";
+import FadeIn from "@/components/FadeIn";
 
 
 const prisma = new PrismaClient();
@@ -12,16 +13,21 @@ export default async function ArchivePage() {
   });
 
   return (
-    <main>
-      <Navbar />
-      <section className="max-w-5xl mx-auto px-4 py-16">
+  <main>
+    <Navbar />
+    <section className="max-w-5xl mx-auto px-4 py-16">
+      <FadeIn>
         <h1 className="text-3xl font-bold mb-8">🗂️ Previous Years</h1>
-        {archives.length === 0 ? (
+      </FadeIn>
+      {archives.length === 0 ? (
+        <FadeIn>
           <p className="text-gray-500">No past years archived yet — check back after this year's mela!</p>
-        ) : (
-          <div className="space-y-12">
-            {archives.map((a) => (
-              <div key={a.id}>
+        </FadeIn>
+      ) : (
+        <div className="space-y-12">
+          {archives.map((a) => (
+            <FadeIn key={a.id}>
+              <div>
                 <h2 className="text-2xl font-bold mb-1">{a.title}</h2>
                 {a.description && <p className="text-gray-600 mb-4">{a.description}</p>}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -30,10 +36,11 @@ export default async function ArchivePage() {
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-        )}
-      </section>
-    </main>
-  );
+            </FadeIn>
+          ))}
+        </div>
+      )}
+    </section>
+  </main>
+);
 }
