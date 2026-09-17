@@ -16,6 +16,7 @@ export default function AdminDashboard() {
         <Link href="/admin/volunteers" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Volunteers</Link>
         <Link href="/admin/sponsors" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Sponsors</Link>
         <Link href="/admin/settings" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Mela Settings</Link>
+        <Link href="/admin/donation-settings" className="px-4 py-2 rounded-lg bg-orange-600 text-white font-medium">Donation Settings</Link>
       </div>
     </div>
   );

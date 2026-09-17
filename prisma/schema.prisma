@@ -91,12 +91,15 @@ model SiteStats {
 }
 
 model Volunteer {
-  id        String   @id @default(cuid())
-  name      String
-  phone     String
-  village   String?
-  interest  String?  // what they want to help with
-  createdAt DateTime @default(now())
+  id         String    @id @default(cuid())
+  name       String
+  phone      String
+  village    String?
+  interest   String?
+  status     String    @default("pending") // "pending" | "approved" | "rejected"
+  uniqueId   String?   @unique
+  approvedAt DateTime?
+  createdAt  DateTime  @default(now())
 }
 
 model Sponsor {
@@ -121,4 +124,9 @@ model News {
   mediaUrl  String?  // Blob URL for photo/video, or YouTube video ID
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+model DonationSettings {
+  id          String @id @default("main")
+  upiId       String
+  payeeName   String
 }
