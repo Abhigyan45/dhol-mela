@@ -30,22 +30,28 @@ export default function VolunteerPage() {
   const [village, setVillage] = useState("");
   const [interest, setInterest] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [honeypot, setHoneypot] = useState("");
+  const [formLoadTime] = useState(Date.now());
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("sending");
-    const res = await fetch("/api/volunteer", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, phone, village, interest }),
-    });
-    if (res.ok) {
-      setStatus("sent");
-      setName(""); setPhone(""); setVillage(""); setInterest("");
-    } else {
-      setStatus("error");
-    }
+  e.preventDefault();
+  setStatus("sending");
+  const res = await fetch("/api/volunteer", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name, phone, village, interest,
+      honeypot,
+      elapsedMs: Date.now() - formLoadTime,
+    }),
+  });
+  if (res.ok) {
+    setStatus("sent");
+    setName(""); setPhone(""); setVillage(""); setInterest("");
+  } else {
+    setStatus("error");
   }
+}
 
   return (
   <main>
@@ -64,6 +70,16 @@ export default function VolunteerPage() {
             <div className="border rounded-xl p-6 bg-green-50 text-green-700 text-center">{t.thanks}</div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                  type="text"
+                  name="website"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ position: "absolute", left: "-9999px" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+              />
               <input type="text" placeholder={t.name} value={name} onChange={(e) => setName(e.target.value)} className="w-full border rounded-lg px-4 py-2" required />
               <input type="tel" placeholder={t.phone} value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full border rounded-lg px-4 py-2" required />
               <input type="text" placeholder={t.village} value={village} onChange={(e) => setVillage(e.target.value)} className="w-full border rounded-lg px-4 py-2" />
