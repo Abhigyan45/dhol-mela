@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 type V = {
   id: string; name: string; phone: string; village: string | null; interest: string | null;
-  status: string; uniqueId: string | null; createdAt: string;
+  photoUrl: string | null; status: string; uniqueId: string | null; createdAt: string;
 };
 
 export default function AdminVolunteers() {
@@ -58,11 +58,18 @@ export default function AdminVolunteers() {
           {items.map((v) => (
             <div key={v.id} className="border rounded-xl p-4">
               <div className="flex justify-between items-start gap-4 mb-2">
-                <div>
-                  <p className="font-semibold">{v.name} — {v.phone}</p>
-                  {v.village && <p className="text-sm text-gray-500">{v.village}</p>}
-                  {v.interest && <p className="text-sm text-gray-700 mt-1">{v.interest}</p>}
-                  {v.uniqueId && <p className="text-xs font-mono text-gray-400 mt-1">{v.uniqueId}</p>}
+                <div className="flex items-center gap-3">
+                  {v.photoUrl ? (
+                    <img src={v.photoUrl} alt={v.name} className="w-12 h-12 rounded-full object-cover" />
+                  ) : (
+                    <div className="w-12 h-12 rounded-full bg-gray-200" />
+                  )}
+                  <div>
+                    <p className="font-semibold">{v.name} — {v.phone}</p>
+                    {v.village && <p className="text-sm text-gray-500">{v.village}</p>}
+                    {v.interest && <p className="text-sm text-gray-700 mt-1">{v.interest}</p>}
+                    {v.uniqueId && <p className="text-xs font-mono text-gray-400 mt-1">{v.uniqueId}</p>}
+                  </div>
                 </div>
                 <span className={`text-xs px-2 py-1 rounded-full font-medium shrink-0 ${statusColors[v.status]}`}>
                   {v.status}
@@ -81,12 +88,12 @@ export default function AdminVolunteers() {
                 )}
                 {v.status === "approved" && v.uniqueId && (
                   <a
-                  href={whatsappSendUrl(v)}
+                    href={whatsappSendUrl(v)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm px-3 py-1 rounded-lg bg-green-600 text-white hover:bg-green-700"
-                >
-                   📤 Send via WhatsApp
+                  >
+                    📤 Send via WhatsApp
                   </a>
                 )}
                 <button onClick={() => handleDelete(v.id)} className="text-sm px-3 py-1 rounded-lg border hover:bg-gray-50 text-gray-500">

@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
-  const { name, phone, village, interest, honeypot, elapsedMs } = await req.json();
+  const { name, phone, village, interest, photoUrl, honeypot, elapsedMs } = await req.json();
 
   if (honeypot) {
     return NextResponse.json({ success: true });
@@ -16,6 +16,6 @@ export async function POST(req: Request) {
   if (!name || !phone) {
     return NextResponse.json({ error: "Name and phone are required" }, { status: 400 });
   }
-  await prisma.volunteer.create({ data: { name, phone, village, interest } });
+  await prisma.volunteer.create({ data: { name, phone, village, interest, photoUrl } });
   return NextResponse.json({ success: true });
 }

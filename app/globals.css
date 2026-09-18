@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FBF6EE;
+  --background: #FAF3E4;
   --foreground: #241C1A;
 }
 
@@ -10,6 +10,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-maroon: #7A1F2B;
+  --color-maroon-dark: #5C1620;
+  --color-maroon-light: #A8495A;
+  --color-gold: #C9962C;
+  --color-gold-light: #E0C88A;
+  --color-ivory: #FAF3E4;
+  --color-charcoal: #241C1A;
 }
 
 body {
@@ -17,6 +25,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.card {
+  background: white;
+  border: 1px solid rgba(122, 31, 43, 0.15);
+  border-radius: 0.75rem;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

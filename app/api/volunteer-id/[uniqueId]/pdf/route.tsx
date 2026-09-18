@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-import { Document, Page, Text, View, StyleSheet, renderToBuffer } from "@react-pdf/renderer";
+import { Document, Page, Text, View, StyleSheet, Image, renderToBuffer } from "@react-pdf/renderer";
 
 const prisma = new PrismaClient();
 
@@ -10,6 +10,7 @@ type VolunteerForPdf = {
   phone: string;
   village: string | null;
   interest: string | null;
+  photoUrl: string | null;
   status: string;
   uniqueId: string | null;
   approvedAt: Date | null;
@@ -31,12 +32,13 @@ const styles = StyleSheet.create({
   signatureBlock: { textAlign: "center", width: 150 },
   signatureLine: { borderBottom: "1pt solid #333", marginBottom: 4, height: 30 },
   signatureLabel: { fontSize: 9, color: "#666" },
+  photo: { width: 70, height: 70, borderRadius: 35, alignSelf: "center", marginBottom: 4, objectFit: "cover" },
 });
 
 export async function GET(req: Request, { params }: { params: Promise<{ uniqueId: string }> }) {
   const { uniqueId } = await params;
   const volunteers = await prisma.$queryRaw<VolunteerForPdf[]>`
-    SELECT "id", "name", "phone", "village", "interest", "status", "uniqueId", "approvedAt"
+    SELECT "id", "name", "phone", "village", "interest", "photoUrl", "status", "uniqueId", "approvedAt"
     FROM "Volunteer"
     WHERE "uniqueId" = ${uniqueId}
     LIMIT 1
@@ -52,11 +54,13 @@ export async function GET(req: Request, { params }: { params: Promise<{ uniqueId
       <Page size="A5" style={styles.page}>
         <View style={styles.card}>
           <View style={styles.header}>
-            <Text style={styles.akhraName}> Songadhwa Akhra No. 7</Text>
+            <Text style={styles.akhraName}>Songadhwa Akhra No. 7</Text>
             <Text style={styles.subtitle}>Dol Mela Committee — Official Volunteer ID</Text>
           </View>
 
           <View style={styles.divider} />
+
+          {volunteer.photoUrl && <Image src={volunteer.photoUrl} style={styles.photo} />}
 
           <View style={styles.idBadge}>
             <Text style={styles.idText}>{volunteer.uniqueId}</Text>

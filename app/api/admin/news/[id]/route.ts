@@ -51,7 +51,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     mediaType = null;
     mediaUrl = null;
   } else if (file && file.size > 0) {
-    const blob = await put(`news/${Date.now()}-${file.name}`, file, { access: "public" });
+    const blob = await put(`news/${Date.now()}-${file.name}`, file, { access: "public" ,token: process.env.VOLIMG_READ_WRITE_TOKEN,});
     mediaType = file.type.startsWith("video/") ? "video" : "photo";
     mediaUrl = blob.url;
   } else if (youtubeUrl) {

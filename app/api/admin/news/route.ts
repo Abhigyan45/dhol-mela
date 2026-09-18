@@ -53,7 +53,7 @@ export async function POST(req: Request) {
   let mediaUrl: string | null = null;
 
   if (file && file.size > 0) {
-    const blob = await put(`news/${Date.now()}-${file.name}`, file, { access: "public" });
+    const blob = await put(`news/${Date.now()}-${file.name}`, file, { access: "public" ,token: process.env.VOLIMG_READ_WRITE_TOKEN,});
     mediaType = file.type.startsWith("video/") ? "video" : "photo";
     mediaUrl = blob.url;
   } else if (youtubeUrl) {

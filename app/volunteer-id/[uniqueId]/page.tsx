@@ -10,6 +10,7 @@ type VolunteerForId = {
   name: string;
   phone: string;
   village: string | null;
+  photoUrl: string | null;
   status: string;
   uniqueId: string | null;
 };
@@ -17,7 +18,7 @@ type VolunteerForId = {
 export default async function VolunteerIdPage({ params }: { params: Promise<{ uniqueId: string }> }) {
   const { uniqueId } = await params;
   const volunteers = await prisma.$queryRaw<VolunteerForId[]>`
-    SELECT "id", "name", "phone", "village", "status", "uniqueId"
+    SELECT "id", "name", "phone", "village", "photoUrl", "status", "uniqueId"
     FROM "Volunteer"
     WHERE "uniqueId" = ${uniqueId}
     LIMIT 1
@@ -31,8 +32,12 @@ export default async function VolunteerIdPage({ params }: { params: Promise<{ un
   return (
     <main className="min-h-screen flex items-center justify-center px-4 py-16">
       <div className="max-w-sm w-full border-2 border-[#7A1F2B] rounded-2xl p-8 text-center">
-        <h1 className="text-lg font-bold text-[#7A1F2B] mb-1"> Songadhwa Akhra No. 7</h1>
+        <h1 className="text-lg font-bold text-[#7A1F2B] mb-1">Songadhwa Akhra No. 7</h1>
         <p className="text-sm text-gray-500 mb-6">Official Volunteer ID</p>
+
+        {volunteer.photoUrl && (
+          <img src={volunteer.photoUrl} alt={volunteer.name} className="w-20 h-20 rounded-full object-cover mx-auto mb-4" />
+        )}
 
         <p className="font-mono text-xl font-bold text-[#C9962C] mb-6">{volunteer.uniqueId}</p>
 
@@ -47,7 +52,7 @@ export default async function VolunteerIdPage({ params }: { params: Promise<{ un
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-orange-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-700"
-          >
+        >
           📄 Download ID Card (PDF)
         </a>
       </div>

@@ -96,7 +96,8 @@ model Volunteer {
   phone      String
   village    String?
   interest   String?
-  status     String    @default("pending") // "pending" | "approved" | "rejected"
+  photoUrl   String?
+  status     String    @default("pending")
   uniqueId   String?   @unique
   approvedAt DateTime?
   createdAt  DateTime  @default(now())
