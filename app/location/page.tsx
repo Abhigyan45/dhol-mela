@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
 import FadeIn from "@/components/FadeIn";
 
-const LAT = 26.583427;
-const LNG = 84.279223;
+const LAT = 26.468313;
+const LNG = 84.203922;
 
 const content = {
   en: { heading: "📍 Location", sub: "Songadhwa, Bairagitola village, Gopalganj district, Bihar", directions: "Get Directions" },
