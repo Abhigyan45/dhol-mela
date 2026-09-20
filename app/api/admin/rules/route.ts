@@ -13,11 +13,11 @@ export async function POST(req: Request) {
   const session = await getAdminSession();
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const { text, category, order } = await req.json();
-  if (!text) return NextResponse.json({ error: "Text is required" }, { status: 400 });
+  const { textEn, textHi, category, order } = await req.json();
+  if (!textEn) return NextResponse.json({ error: "English text is required" }, { status: 400 });
 
   const rule = await prisma.safetyRule.create({
-    data: { text, category: category ?? "general", order: order ?? 0 },
+    data: { textEn, textHi: textHi || null, category: category ?? "general", order: order ?? 0 },
   });
   return NextResponse.json(rule);
 }

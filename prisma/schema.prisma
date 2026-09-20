@@ -133,8 +133,9 @@ model DonationSettings {
 }
 model SafetyRule {
   id        String   @id @default(cuid())
-  text      String
-  category  String   @default("general") // "general" | "safety" | "conduct"
+  textEn    String
+  textHi    String?
+  category  String   @default("general")
   order     Int      @default(0)
   createdAt DateTime @default(now())
 }
