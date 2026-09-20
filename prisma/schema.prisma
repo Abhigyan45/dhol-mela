@@ -131,3 +131,10 @@ model DonationSettings {
   upiId       String
   payeeName   String
 }
+model SafetyRule {
+  id        String   @id @default(cuid())
+  text      String
+  category  String   @default("general") // "general" | "safety" | "conduct"
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}

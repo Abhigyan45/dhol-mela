@@ -1,3 +1,5 @@
+
+
 import { PrismaClient } from "@prisma/client";
 import { notFound } from "next/navigation";
 
@@ -32,7 +34,10 @@ export default async function VolunteerIdPage({ params }: { params: Promise<{ un
   return (
     <main className="min-h-screen flex items-center justify-center px-4 py-16">
       <div className="max-w-sm w-full border-2 border-[#7A1F2B] rounded-2xl p-8 text-center">
-        <h1 className="text-lg font-bold text-[#7A1F2B] mb-1">Songadhwa Akhra No. 7</h1>
+        <div className="flex items-center justify-center gap-2 mb-1">
+          <img src="/icons/android-chrome-192x192.png" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
+          <h1 className="text-lg font-bold text-[#7A1F2B]">Songadhwa Akhra No. 7</h1>
+        </div>
         <p className="text-sm text-gray-500 mb-6">Official Volunteer ID</p>
 
         {volunteer.photoUrl && (

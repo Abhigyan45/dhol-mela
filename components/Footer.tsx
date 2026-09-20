@@ -34,7 +34,10 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300 mt-16">
       <div className="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
         <div>
-          <h3 className="text-white font-bold text-lg mb-2">🥁 Songadhwa Akhra No-7 Dol Mela</h3>
+          <h3 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
+          <img src="/icons/android-chrome-192x192.png" alt="Logo" className="w-6 h-6 rounded-full object-cover" />
+           Songadhwa Akhra No-7 Dol Mela
+          </h3>
           <p className="text-sm text-gray-400">{t.address}</p>
         </div>
 
@@ -47,6 +50,8 @@ export default function Footer() {
             <li><Link href="/gallery" className="hover:text-orange-400">{t.links.gallery}</Link></li>
             <li><Link href="/donate" className="hover:text-orange-400">{t.links.donate}</Link></li>
             <li><Link href="/contact" className="hover:text-orange-400">{t.links.contact}</Link></li>
+            <li><Link href="/rules-safety" className="hover:text-orange-400">{lang === "en" ? "Rules & Safety" : "नियम एवं सुरक्षा"}</Link></li>
+            <li><Link href="/terms" className="hover:text-orange-400">{lang === "en" ? "Terms & Disclaimer" : "नियम एवं अस्वीकरण"}</Link></li>
           </ul>
         </div>
 

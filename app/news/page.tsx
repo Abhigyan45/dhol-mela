@@ -3,6 +3,11 @@ import { PrismaClient } from "@prisma/client";
 import NewsPageContent from "@/components/NewsPageContent";
 import FadeIn from "@/components/FadeIn";
 
+export const metadata = {
+  title: "News - Songadhwa Akhra No-7 Dol Mela",
+  description: "Latest news and updates about the Songadhwa Akhra No-7 Dol Mela.",
+};
+
 
 const prisma = new PrismaClient();
 export const dynamic = "force-dynamic";

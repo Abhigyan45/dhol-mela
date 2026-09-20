@@ -3,6 +3,11 @@ import { PrismaClient } from "@prisma/client";
 import GalleryPageContent from "@/components/GalleryPageContent";
 import FadeIn from "@/components/FadeIn";
 
+export const metadata = {
+  title: "Gallery - Songadhwa Akhra No-7 Dol Mela",
+  description: "Photos and videos from the Songadhwa Akhra No-7 Dol Mela.",
+};
+
 
 const prisma = new PrismaClient();
 export const dynamic = "force-dynamic";
