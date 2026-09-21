@@ -3,6 +3,8 @@ import { PrismaClient } from "@prisma/client";
 import NotificationsPageContent from "@/components/NotificationsPageContent";
 import FadeIn from "@/components/FadeIn";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Notifications - Songadhwa Akhra No-7 Dhol Mela",
   description: "Latest notifications from the Songadhwa Akhra No-7 Dhol Mela committee.",
