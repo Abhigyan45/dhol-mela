@@ -7,11 +7,11 @@ import { useLanguage } from "@/context/LanguageContext";
 const content = {
   en: {
     title: "📜 Terms & Disclaimer",
-    intro: "This website (songadhwadolmela.vercel.app) is run by volunteers of the Songadhwa Akhra No-7 Dol Mela Committee to share information about the annual mela with the public.",
+    intro: "This website (songadhwadolmela.vercel.app) is run by volunteers of the Songadhwa Akhra No-7 Dhol Mela Committee to share information about the annual mela with the public.",
     s1: "Purpose of this Website",
     s1body: "This site is for informational purposes only — sharing news, schedules, gallery, and ways to support or volunteer for the mela. It is not an official government website and does not represent any government body.",
     s2: "Individual Responsibility",
-    s2body: "The Songadhwa Akhra No-7 Dol Mela Committee, its volunteers, and this website are not responsible for the individual actions or conduct of any attendee, vendor, or participant at the mela. Every attendee is responsible for following applicable laws and for their own conduct and safety during the event.",
+    s2body: "The Songadhwa Akhra No-7 Dhol Mela Committee, its volunteers, and this website are not responsible for the individual actions or conduct of any attendee, vendor, or participant at the mela. Every attendee is responsible for following applicable laws and for their own conduct and safety during the event.",
     s3: "No Liability for User Content",
     s3body: "Messages submitted through the Contact or Volunteer forms are reviewed by committee volunteers. The committee reserves the right to not act on, or to report to appropriate authorities, any content that appears unlawful.",
     s4: "Donations",

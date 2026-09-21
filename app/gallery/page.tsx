@@ -4,8 +4,8 @@ import GalleryPageContent from "@/components/GalleryPageContent";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
-  title: "Gallery - Songadhwa Akhra No-7 Dol Mela",
-  description: "Photos and videos from the Songadhwa Akhra No-7 Dol Mela.",
+  title: "Gallery - Songadhwa Akhra No-7 Dhol Mela",
+  description: "Photos and videos from the Songadhwa Akhra No-7 Dhol Mela.",
 };
 
 

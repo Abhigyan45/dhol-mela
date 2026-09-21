@@ -6,8 +6,8 @@ import FadeIn from "@/components/FadeIn";
 
 const content = {
   en: {
-    title: "🥁 About Songadhwa Akhra No-7 Dol Mela",
-    intro: "Welcome to the official page of the Songadhwa Akhra No-7 Dol Mela, Gopalganj. This annual celebration is the pride of our village, bringing together the spirit of devotion, bravery, and community. Organized by Songadhwa Akhra No. 7, our Dol Mela is famous throughout the Gopalganj district for its magnificent Dols (holy floats), high-energy traditional martial arts, and vibrant cultural celebrations.",
+    title: "🥁 About Songadhwa Akhra No-7 Dhol Mela",
+    intro: "Welcome to the official page of the Songadhwa Akhra No-7 Dhol Mela, Gopalganj. This annual celebration is the pride of our village, bringing together the spirit of devotion, bravery, and community. Organized by Songadhwa Akhra No. 7, our Dhol Mela is famous throughout the Gopalganj district for its magnificent Dols (holy floats), high-energy traditional martial arts, and vibrant cultural celebrations.",
     timesHeading: "⏰ Opening & Closing Times",
     timesIntro: "Our village mela follows a traditional two-day schedule, transitioning from a high-energy night procession into a bustling daytime carnival.",
     day1: "Day 1 (The Grand Procession):",

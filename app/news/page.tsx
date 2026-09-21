@@ -4,8 +4,8 @@ import NewsPageContent from "@/components/NewsPageContent";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
-  title: "News - Songadhwa Akhra No-7 Dol Mela",
-  description: "Latest news and updates about the Songadhwa Akhra No-7 Dol Mela.",
+  title: "News - Songadhwa Akhra No-7 Dhol Mela",
+  description: "Latest news and updates about the Songadhwa Akhra No-7 Dhol Mela.",
 };
 
 

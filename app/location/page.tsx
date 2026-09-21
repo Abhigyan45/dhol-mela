@@ -31,7 +31,7 @@ export default function LocationPage() {
         <FadeIn>
         <div className="mb-6">
           <p className="text-gray-700 leading-relaxed">
-            The Songadhwa Akhra No. 7 Dol Mela is held in the village of Songadhwa, located in the Bairagitola area of Gopalganj district, Bihar. The mela site is easily accessible by road and is well-known among locals and visitors alike.
+            The Songadhwa Akhra No. 7 Dhol Mela is held in the village of Songadhwa, located in the Bairagitola area of Gopalganj district, Bihar. The mela site is easily accessible by road and is well-known among locals and visitors alike.
           </p>
         </div>
         </FadeIn>

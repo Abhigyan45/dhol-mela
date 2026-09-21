@@ -3,7 +3,7 @@
 import { useLanguage } from "@/context/LanguageContext";
 
 const content = {
-  en: { heading: "🤝 Our Sponsors", empty: "No sponsors listed yet.", thanks: "We're grateful to the individuals and businesses who support the Songadhwa Akhra No-7 Dol Mela each year." },
+  en: { heading: "🤝 Our Sponsors", empty: "No sponsors listed yet.", thanks: "We're grateful to the individuals and businesses who support the Songadhwa Akhra No-7 Dhol Mela each year." },
   hi: { heading: "🤝 हमारे प्रायोजक", empty: "अभी कोई प्रायोजक सूचीबद्ध नहीं है।", thanks: "हम उन व्यक्तियों और व्यवसायों के आभारी हैं जो हर साल सोंगढ़वा अखाड़ा नंबर 7 ढोल मेला का समर्थन करते हैं।" },
 };
 

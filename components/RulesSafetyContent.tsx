@@ -11,8 +11,8 @@ const categoryLabels = {
 };
 
 const pageText = {
-  en: { title: "🚨 Rules & Safety", intro: "Please read and follow these guidelines to help keep the Songadhwa Akhra No-7 Dol Mela safe and enjoyable for everyone.", empty: "Rules will be posted here closer to the mela date." },
-  hi: { title: "🚨 नियम एवं सुरक्षा", intro: "कृपया इन दिशानिर्देशों को पढ़ें और उनका पालन करें ताकि सोंगढ़वा अखाड़ा नंबर 7 ढोल मेला सभी के लिए सुरक्षित और आनंददायक रहे।", empty: "मेले की तारीख नजदीक आने पर यहां नियम पोस्ट किए जाएंगे।" },
+  en: { title: "🚨 Rules & Safety", intro: "Please read and follow these guidelines to help keep the Songadhwa Akhra No-7 Dhol Mela safe and enjoyable for everyone.", empty: "Rules will be posted here closer to the mela date." },
+  hi: { title: "🚨 नियम एवं सुरक्षा", intro: "कृपया इन दिशानिर्देशों को पढ़ें और उनका पालन करें ताकि सोनगढ़वा अखाड़ा नंबर 7 ढोल मेला सभी के लिए सुरक्षित और आनंददायक रहे।", empty: "मेले की तारीख नजदीक आने पर यहां नियम पोस्ट किए जाएंगे।" },
 };
 
 export default function RulesSafetyContent({ rules }: { rules: Rule[] }) {

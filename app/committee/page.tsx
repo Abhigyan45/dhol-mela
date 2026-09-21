@@ -35,8 +35,8 @@ import CommitteeServer from "@/components/CommitteeServer";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
-  title: "Committee - Songadhwa Akhra No-7 Dol Mela",
-  description: "Meet the committee members organizing the Songadhwa Akhra No-7 Dol Mela.",
+  title: "Committee - Songadhwa Akhra No-7 Dhol Mela",
+  description: "Meet the committee members organizing the Songadhwa Akhra No-7 Dhol Mela.",
 };
 
 

@@ -55,7 +55,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ uniqueId
         <View style={styles.card}>
           <View style={styles.header}>
             <Text style={styles.akhraName}>Songadhwa Akhra No. 7</Text>
-            <Text style={styles.subtitle}>Dol Mela Committee — Official Volunteer ID</Text>
+            <Text style={styles.subtitle}>Dhol Mela Committee — Official Volunteer ID</Text>
           </View>
 
           <View style={styles.divider} />

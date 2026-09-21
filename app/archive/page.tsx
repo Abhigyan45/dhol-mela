@@ -3,8 +3,8 @@ import { PrismaClient } from "@prisma/client";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
-  title: "Previous Years - Songadhwa Akhra No-7 Dol Mela",
-  description: "Photos and memories from past years of the Songadhwa Akhra No-7 Dol Mela.",
+  title: "Previous Years - Songadhwa Akhra No-7 Dhol Mela",
+  description: "Photos and memories from past years of the Songadhwa Akhra No-7 Dhol Mela.",
 };
 
 const prisma = new PrismaClient();

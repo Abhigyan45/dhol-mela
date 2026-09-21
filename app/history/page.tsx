@@ -5,8 +5,8 @@ import FadeIn from "@/components/FadeIn";
 
 const content = {
   en: {
-    title: "📜 History of Songadhwa Akhra No-7 Dol Mela",
-    intro: "The Songadhwa Akhra No-7 Dol Mela is not just a festival; it is a living legacy of our village's unity, bravery, and deep-rooted faith. For decades, our Akhra has stood as a symbol of pride in the Gopalganj district, preserving the rich traditions of the Mahaviri Akhada and Dol processions.",
+    title: "📜 History of Songadhwa Akhra No-7 Dhol Mela",
+    intro: "The Songadhwa Akhra No-7 Dhol Mela is not just a festival; it is a living legacy of our village's unity, bravery, and deep-rooted faith. For decades, our Akhra has stood as a symbol of pride in the Gopalganj district, preserving the rich traditions of the Mahaviri Akhada and Dol processions.",
     whenHeading: "🌱 When & Why It Started",
     whenBody: "The roots of our mela trace back to",
     yearPlaceholder: "15/10/1967",
@@ -19,7 +19,7 @@ const content = {
     growthNote: "What began as a small, humble gathering with a single holy flag (Nishan) has today grown into one of the most anticipated grand festivals in the region.",
     milestonesHeading: "🏆 Major Milestones Over the Years",
     milestones: [
-      { year: "[1967]", title: "The First Grand Dol", description: "Transitioned from carrying traditional flags to building the first monumental, beautifully decorated Dol — marking entry into the mainstream Dol Mela celebrations of Gopalganj." },
+      { year: "[1967]", title: "The First Grand Dol", description: "Transitioned from carrying traditional flags to building the first monumental, beautifully decorated Dol — marking entry into the mainstream Dhol Mela celebrations of Gopalganj." },
       { year: "[1977]", title: "Youth Martial Arts Excellence", description: "Village youth gained widespread recognition across the district for exceptional skills in Lathi-Khel (stick fighting) and traditional sword displays, winning accolades in regional friendly competitions." },
       { year: "[1985]", title: "The Modern Sound Revolution", description: "Introduced state-of-the-art modern sound systems and lighting, making the night procession one of the most energetic and heavily attended events in the area." },
       { year: "[1985-2026(till now)]", title: "Community Infrastructure Growth", description: "The Akhra committee officially structured the Mela layout — introducing dedicated food zones, volunteer-led safety teams, and organized parking to accommodate thousands of outside visitors." },

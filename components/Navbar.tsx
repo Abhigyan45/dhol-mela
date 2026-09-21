@@ -43,7 +43,7 @@
 //     <header className="sticky top-0 z-50 bg-amber-400/95 backdrop-blur border-b border-amber-500">
 //       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 gap-4">
 //         <Link href="/" className="text-lg font-bold flex items-center gap-1.5 whitespace-nowrap shrink-0">
-//           🥁 <span className="hidden sm:inline">Akhra No-7</span> Dol Mela
+//           🥁 <span className="hidden sm:inline">Akhra No-7</span> Dhol Mela
 //         </Link>
 
 //         <ul className="hidden lg:flex items-center gap-3.5 text-sm font-medium whitespace-nowrap">
@@ -162,7 +162,7 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 gap-4">
         <Link href="/" className="text-lg font-bold flex items-center gap-2 whitespace-nowrap shrink-0">
         <img src="/icons/android-chrome-192x192.png" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
-        <span className="hidden sm:inline">Akhra No-7</span> Dol Mela
+        <span className="hidden sm:inline">Akhra No-7</span> Dhol Mela
         </Link>
 
         <ul className="hidden lg:flex items-center gap-3.5 text-sm font-medium whitespace-nowrap">

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Countdown from "./Countdown";
 import { useLanguage } from "@/context/LanguageContext";
+import { Calendar, MapPin } from "lucide-react";
 
 const content = {
   en: { tagline: "Tradition • Culture • Unity", about: "About Mela", gallery: "Gallery", donate: "DONATE" },
@@ -38,16 +39,16 @@ export default function Hero() {
        {t.tagline}
        </p>
   <h1 className="hero-fade-in text-4xl md:text-6xl font-extrabold mb-4 text-white" style={{ animationDelay: "0.25s" }}>
-    Songadhwa Akhra No-7 Dol Mela {melaDate ? melaDate.getFullYear() : new Date().getFullYear()}
+    Songadhwa Akhra No-7 Dhol Mela {melaDate ? melaDate.getFullYear() : new Date().getFullYear()}
   </h1>
   {formattedDate && (
-    <p className="hero-fade-in text-gray-200 mb-2" style={{ animationDelay: "0.4s" }}>
-      📅 {formattedDate}
-    </p>
-  )}
-  <p className="hero-fade-in text-gray-200 mb-8" style={{ animationDelay: "0.5s" }}>
-    📍 Songadhwa, Bairagitola, Gopalganj, Bihar
+  <p className="text-gray-200 mb-2 flex items-center justify-center gap-2">
+    <Calendar className="w-4 h-4" /> {formattedDate}
   </p>
+)}
+  <p className="text-gray-200 mb-8 flex items-center justify-center gap-2">
+  <MapPin className="w-4 h-4" /> Songadhwa, Bairagitola, Gopalganj, Bihar
+</p>
 
   <div className="hero-fade-in mb-8" style={{ animationDelay: "0.65s" }}>
     <Countdown />

@@ -15,25 +15,25 @@ const geistMono = Geist_Mono({
 });
 
 // export const metadata: Metadata = {
-//   title: "Songadhwa Akhra No-7 Dol Mela",
-//   description: "Official website of the Songadhwa Akhra No-7 Dol Mela — Gopalganj, Bihar",
+//   title: "Songadhwa Akhra No-7 Dhol Mela",
+//   description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
 // };
 export const metadata: Metadata = {
   metadataBase: new URL("https://songadhwadolmela.vercel.app"),
-  title: "Songadhwa Akhra No-7 Dol Mela",
-  description: "Official website of the Songadhwa Akhra No-7 Dol Mela — Gopalganj, Bihar",
+  title: "Songadhwa Akhra No-7 Dhol Mela",
+  description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
   manifest: "/manifest.json",
   openGraph: {
-    title: "Songadhwa Akhra No-7 Dol Mela",
-    description: "Official website of the Songadhwa Akhra No-7 Dol Mela — Gopalganj, Bihar",
+    title: "Songadhwa Akhra No-7 Dhol Mela",
+    description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
     url: "https://songadhwadolmela.vercel.app",
-    siteName: "Songadhwa Akhra No-7 Dol Mela",
+    siteName: "Songadhwa Akhra No-7 Dhol Mela",
     images: [
       {
         url: "/images/banner.png",
         width: 1200,
         height: 630,
-        alt: "Songadhwa Akhra No-7 Dol Mela",
+        alt: "Songadhwa Akhra No-7 Dhol Mela",
       },
     ],
     locale: "en_IN",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Songadhwa Akhra No-7 Dol Mela",
-    description: "Official website of the Songadhwa Akhra No-7 Dol Mela — Gopalganj, Bihar",
+    title: "Songadhwa Akhra No-7 Dhol Mela",
+    description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
     images: ["/images/banner.png"],
   },
 };
