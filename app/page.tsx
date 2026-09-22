@@ -132,11 +132,11 @@ const eventJsonLd = {
       <Navbar />
       <NotificationBanner />
       <Hero />
-      <HistorySection />
-      <NewsSectionServer />
-      <GallerySectionServer />
-      <CommitteeServer />
-      <SponsorsSection />
+      <FadeIn><HistorySection /></FadeIn>
+      <FadeIn><NewsSectionServer /></FadeIn>
+      <FadeIn><GallerySectionServer /></FadeIn>
+      <FadeIn><CommitteeServer /></FadeIn>
+      <FadeIn><SponsorsSection /></FadeIn>
     </main>
   );
 }
