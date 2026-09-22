@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/admin/",
     },
-    sitemap: "https://songadhwadolmela.vercel.app/sitemap.xml",
+    sitemap: "https://songadhwadholmela.vercel.app/sitemap.xml",
   };
 }

@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 //   description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
 // };
 export const metadata: Metadata = {
-  metadataBase: new URL("https://songadhwadolmela.vercel.app"),
+  metadataBase: new URL("https://songadhwadholmela.vercel.app"),
   title: "Songadhwa Akhra No-7 Dhol Mela",
   description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
   verification: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Songadhwa Akhra No-7 Dhol Mela",
     description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
-    url: "https://songadhwadolmela.vercel.app",
+    url: "https://songadhwadholmela.vercel.app",
     siteName: "Songadhwa Akhra No-7 Dhol Mela",
     images: [
       {

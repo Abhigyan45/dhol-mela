@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 const content = {
   en: {
     title: "📜 Terms & Disclaimer",
-    intro: "This website (songadhwadolmela.vercel.app) is run by volunteers of the Songadhwa Akhra No-7 Dhol Mela Committee to share information about the annual mela with the public.",
+    intro: "This website (songadhwadholmela.vercel.app) is run by volunteers of the Songadhwa Akhra No-7 Dhol Mela Committee to share information about the annual mela with the public.",
     s1: "Purpose of this Website",
     s1body: "This site is for informational purposes only — sharing news, schedules, gallery, and ways to support or volunteer for the mela. It is not an official government website and does not represent any government body.",
     s2: "Individual Responsibility",
@@ -24,7 +24,7 @@ const content = {
   },
   hi: {
     title: "📜 नियम एवं अस्वीकरण",
-    intro: "यह वेबसाइट (songadhwadolmela.vercel.app) सोनगढ़वा अखाड़ा नंबर 7 ढोल मेला समिति के स्वयंसेवकों द्वारा वार्षिक मेले की जानकारी जनता के साथ साझा करने के लिए संचालित की जाती है।",
+    intro: "यह वेबसाइट (songadhwadholmela.vercel.app) सोनगढ़वा अखाड़ा नंबर 7 ढोल मेला समिति के स्वयंसेवकों द्वारा वार्षिक मेले की जानकारी जनता के साथ साझा करने के लिए संचालित की जाती है।",
     s1: "इस वेबसाइट का उद्देश्य",
     s1body: "यह साइट केवल जानकारी के उद्देश्य से है — समाचार, कार्यक्रम, गैलरी, और मेले के समर्थन या स्वयंसेवा के तरीके साझा करना। यह कोई सरकारी वेबसाइट नहीं है और किसी सरकारी निकाय का प्रतिनिधित्व नहीं करती।",
     s2: "व्यक्तिगत जिम्मेदारी",

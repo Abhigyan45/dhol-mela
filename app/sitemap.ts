@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = "https://songadhwadolmela.vercel.app";
+  const base = "https://songadhwadholmela.vercel.app";
   const pages = [
     "", "about", "history", "village", "news", "notifications", "gallery",
     "committee", "schedule", "donate", "location", "contact", "live",
