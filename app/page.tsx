@@ -82,34 +82,46 @@ export const metadata = {
 //     </main>
 //   );
 export default function Home() {
-  const eventJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: "Songadhwa Akhra No-7 Dhol Mela",
-    alternateName: "सोनगढ़वा ढोल मेला आखड़ा नंबर 7",
-    description:
-      "Annual Dhol Mela celebrated by Songadhwa Akhra No. 7 — Mahaviri Akhada procession, holy Dols, Dhol performances, Lathi-Khel martial arts, and cultural programme.",
-    startDate: "2026-10-29",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
-    location: {
-      "@type": "Place",
-      name: "Songadhwa, Bairagitola",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Songadhwa, Bairagitola",
-        addressRegion: "Bihar",
-        postalCode: "841425",
-        addressCountry: "IN",
-      },
+const eventJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "Songadhwa Akhra No-7 Dhol Mela",
+  alternateName: "सोनगढ़वा ढोल मेला आखड़ा नंबर 7",
+  description:
+    "Annual Dhol Mela celebrated by Songadhwa Akhra No. 7 — Mahaviri Akhada procession, holy Dols, Dhol performances, Lathi-Khel martial arts, and cultural programme.",
+  startDate: "2026-10-29T16:00:00+05:30",
+  endDate: "2026-10-30T22:00:00+05:30",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  location: {
+    "@type": "Place",
+    name: "Songadhwa, Bairagitola",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Songadhwa, Bairagitola",
+      addressRegion: "Bihar",
+      postalCode: "841425",
+      addressCountry: "IN",
     },
-    organizer: {
-      "@type": "Organization",
-      name: "Songadhwa Akhra No. 7 Committee",
-      url: "https://songadhwadolmela.vercel.app",
-    },
-    image: ["https://songadhwadolmela.vercel.app/images/banner.png"],
-  };
+  },
+  organizer: {
+    "@type": "Organization",
+    name: "Songadhwa Akhra No. 7 Committee",
+    url: "https://songadhwadholmela.vercel.app",
+  },
+  performer: {
+    "@type": "Organization",
+    name: "Songadhwa Akhra No. 7",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "INR",
+    availability: "https://schema.org/InStock",
+    url: "https://songadhwadholmela.vercel.app",
+  },
+  image: ["https://songadhwadholmela.vercel.app/images/banner.png"],
+};
 
   return (
     <main>
