@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://songadhwadolmela.vercel.app"),
   title: "Songadhwa Akhra No-7 Dhol Mela",
   description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
+  verification: {
+    google: 'NgMWEXrQuNchRih8Z2oqJ9uB9iw9SYN3McWi1zXRYIU',
+  },
   manifest: "/manifest.json",
   openGraph: {
     title: "Songadhwa Akhra No-7 Dhol Mela",
