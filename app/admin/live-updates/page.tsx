@@ -46,13 +46,13 @@ export default function AdminLiveUpdates() {
         Post these as things happen on mela day — visitors following along will see them appear automatically.
       </p>
 
-      <form onSubmit={handleSubmit} className="border rounded-xl p-5 mb-8 flex gap-3">
+      <form onSubmit={handleSubmit} className="border rounded-xl p-5 mb-8 space-y-3 sm:space-y-0 sm:flex sm:gap-3">
         <input
           type="text"
           placeholder="Time (e.g. 10:00 AM)"
           value={timeLabel}
           onChange={(e) => setTimeLabel(e.target.value)}
-          className="w-36 border rounded-lg px-3 py-2"
+          className="w-full sm:w-36 border rounded-lg px-3 py-2"
           required
         />
         <input
@@ -60,10 +60,10 @@ export default function AdminLiveUpdates() {
           placeholder="What's happening"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="flex-1 border rounded-lg px-3 py-2"
+          className="w-full sm:flex-1 border rounded-lg px-3 py-2"
           required
         />
-        <button className="bg-orange-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-orange-700">
+        <button className="w-full sm:w-auto bg-orange-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-orange-700">
           Post
         </button>
       </form>
@@ -75,12 +75,12 @@ export default function AdminLiveUpdates() {
       ) : (
         <div className="space-y-3">
           {updates.map((u) => (
-            <div key={u.id} className="border rounded-xl p-4 flex justify-between items-start gap-4">
+            <div key={u.id} className="border rounded-xl p-4 flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-4">
               <div>
                 <p className="text-orange-600 font-semibold text-sm">{u.timeLabel}</p>
                 <p className="text-gray-700">{u.message}</p>
               </div>
-              <button onClick={() => handleDelete(u.id)} className="text-sm px-3 py-1 rounded-lg border border-red-300 text-red-600 hover:bg-red-50">
+              <button onClick={() => handleDelete(u.id)} className="text-sm px-3 py-1 rounded-lg border border-red-300 text-red-600 hover:bg-red-50 self-start">
                 Delete
               </button>
             </div>

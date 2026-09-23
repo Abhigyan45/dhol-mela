@@ -72,3 +72,12 @@ body {
 .marquee-track:hover {
   animation-play-state: paused;
 }
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.hanuman-float img {
+  animation: gentleFloat 3s ease-in-out infinite;
+}

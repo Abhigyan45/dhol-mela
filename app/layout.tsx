@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Footer from "@/components/Footer";
+import HanumanFloat from "@/components/HanumanFloat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,11 +14,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// export const metadata: Metadata = {
-//   title: "Songadhwa Akhra No-7 Dhol Mela",
-//   description: "Official website of the Songadhwa Akhra No-7 Dhol Mela — Gopalganj, Bihar",
-// };
 export const metadata: Metadata = {
   metadataBase: new URL("https://songadhwadholmela.vercel.app"),
   title: "Songadhwa Akhra No-7 Dhol Mela",
@@ -56,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <LanguageProvider>
           {children}
+          <HanumanFloat />
           <Footer />
         </LanguageProvider>
       </body>
