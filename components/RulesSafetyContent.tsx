@@ -42,7 +42,7 @@ export default function RulesSafetyContent({ rules }: { rules: Rule[] }) {
             <FadeIn key={key}>
               <div className="mb-10">
                 <h2 className="text-xl font-bold mb-3">{label}</h2>
-                <ul className="space-y-2 text-gray-700 list-disc list-inside">
+                <ul className="space-y-2 text-gray-700 list-disc list-outside pl-5">
                   {byCategory[key].map((r) => (
                     <li key={r.id}>{lang === "hi" && r.textHi ? r.textHi : r.textEn}</li>
                   ))}

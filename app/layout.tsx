@@ -49,41 +49,25 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body>
+      {/* <body>
         <LanguageProvider>
           {children}
           <HanumanFloat />
           <Footer />
         </LanguageProvider>
-      </body>
+      </body> */}
+      <body>
+          <LanguageProvider>
+              <div className="min-h-screen flex flex-col">
+              <div className="flex-1">
+                  {children}
+              </div>
+              <Footer />
+            </div>
+          <HanumanFloat />
+         </LanguageProvider>
+     </body>
     </html>
   );
 }
-
-// // i am adiding for color
-// import { Baloo_2, Hind } from "next/font/google";
-// import { LanguageProvider } from "@/context/LanguageContext";
-// import "./globals.css";
-
-// const display = Baloo_2({
-//   subsets: ["latin", "devanagari"],
-//   weight: ["600", "700", "800"],
-//   variable: "--font-heading",   // renamed
-// });
-
-// const body = Hind({
-//   subsets: ["latin", "devanagari"],
-//   weight: ["400", "500", "600"],
-//   variable: "--font-bodytext",  // renamed
-// });
-
-// export default function RootLayout({ children }: { children: React.ReactNode }) {
-//   return (
-//     <html lang="en" className={`${display.variable} ${body.variable}`}>
-//       <body className="bg-ivory text-charcoal font-body antialiased">
-//         <LanguageProvider>{children}</LanguageProvider>
-//       </body>
-//     </html>
-//   );
-// }
 
