@@ -119,6 +119,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { Search } from "lucide-react";
 
 const mainLinks = [
   { href: "/", en: "Home", hi: "होम" },
@@ -137,7 +138,7 @@ const moreLinks = [
   { href: "/live", en: "Live", hi: "लाइव" },
   { href: "/sponsors", en: "Sponsors", hi: "प्रायोजक" },
   { href: "/archive", en: "Archive", hi: "पुरालेख" },
-  { href: "/search", en: "Search", hi: "खोजें" },
+  // { href: "/search", en: "Search", hi: "खोजें" },
   { href: "/volunteer", en: "Volunteer", hi: "स्वयंसेवक" },
 ];
 
@@ -197,22 +198,30 @@ export default function Navbar() {
             )}
           </li>
         </ul>
+        
 
         <div className="flex items-center gap-3 shrink-0">
-          <button
-            onClick={toggleLang}
-            className="text-sm font-semibold border rounded-full px-3 py-1 hover:bg-gray-50"
-          >
-            {lang === "en" ? "हिं" : "EN"}
-          </button>
-          <button
-            className="lg:hidden text-2xl"
-            aria-label="Menu"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? "✕" : "☰"}
-          </button>
-        </div>
+  <Link
+    href="/search"
+    aria-label="Search"
+    className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+  >
+    <Search className="w-5 h-5" />
+  </Link>
+  <button
+    onClick={toggleLang}
+    className="text-sm font-semibold border rounded-full px-3 py-1 hover:bg-gray-50"
+  >
+    {lang === "en" ? "हिं" : "EN"}
+  </button>
+  <button
+    className="lg:hidden text-2xl"
+    aria-label="Menu"
+    onClick={() => setOpen(!open)}
+  >
+    {open ? "✕" : "☰"}
+  </button>
+</div>
       </nav>
 
       {open && (
