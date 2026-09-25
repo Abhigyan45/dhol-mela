@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { getYouTubeEmbedUrl, isDirectVideoFile } from "@/lib/video";
 
-type Photo = { id: string; url: string; caption: string | null };
+type Photo = { id: string; url: string; type: string; caption: string | null };
 type ArchiveItem = {
   id: string;
   year: number;
@@ -17,7 +18,8 @@ export default function AdminArchive() {
   const [year, setYear] = useState(new Date().getFullYear() - 1);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [photoUrl, setPhotoUrl] = useState<{ [key: string]: string }>({});
+  const [mediaUrl, setMediaUrl] = useState<{ [key: string]: string }>({});
+  const [mediaType, setMediaType] = useState<{ [key: string]: "photo" | "video" }>({});
 
   async function load() {
     setLoading(true);
@@ -43,15 +45,23 @@ export default function AdminArchive() {
     load();
   }
 
-  async function handleAddPhoto(archiveId: string) {
-    const url = photoUrl[archiveId];
+  async function handleAddMedia(archiveId: string) {
+    const url = mediaUrl[archiveId];
     if (!url) return;
-    await fetch(`/api/admin/archive/${archiveId}/photos`, {
+    const type = mediaType[archiveId] ?? "photo";
+
+    const res = await fetch(`/api/admin/archive/${archiveId}/photos`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url }),
+      body: JSON.stringify({ url, type }),
     });
-    setPhotoUrl({ ...photoUrl, [archiveId]: "" });
+
+    if (!res.ok) {
+      alert("Failed to add — check the URL and try again.");
+      return;
+    }
+
+    setMediaUrl({ ...mediaUrl, [archiveId]: "" });
     load();
   }
 
@@ -117,28 +127,51 @@ export default function AdminArchive() {
 
               <div className="grid grid-cols-4 gap-2 mb-3">
                 {a.photos.map((p: Photo) => (
-                  <img
-                    key={p.id}
-                    src={p.url}
-                    alt={p.caption ?? ""}
-                    className="w-full aspect-square object-cover rounded-lg"
-                  />
+                  p.type === "video" ? (
+                    <div key={p.id} className="w-full aspect-square bg-gray-900 rounded-lg flex items-center justify-center text-white text-2xl">
+                      ▶️
+                    </div>
+                  ) : (
+                    <img
+                      key={p.id}
+                      src={p.url}
+                      alt={p.caption ?? ""}
+                      className="w-full aspect-square object-cover rounded-lg"
+                    />
+                  )
                 ))}
+              </div>
+
+              <div className="flex gap-2 mb-2">
+                <button
+                  type="button"
+                  onClick={() => setMediaType({ ...mediaType, [a.id]: "photo" })}
+                  className={`px-3 py-1 rounded-lg text-sm border ${(mediaType[a.id] ?? "photo") === "photo" ? "bg-orange-600 text-white border-orange-600" : "hover:bg-gray-50"}`}
+                >
+                  📷 Photo
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMediaType({ ...mediaType, [a.id]: "video" })}
+                  className={`px-3 py-1 rounded-lg text-sm border ${mediaType[a.id] === "video" ? "bg-orange-600 text-white border-orange-600" : "hover:bg-gray-50"}`}
+                >
+                  🎥 Video
+                </button>
               </div>
 
               <div className="flex gap-2">
                 <input
                   type="text"
-                  placeholder="Paste photo URL"
-                  value={photoUrl[a.id] ?? ""}
-                  onChange={(e) => setPhotoUrl({ ...photoUrl, [a.id]: e.target.value })}
+                  placeholder={mediaType[a.id] === "video" ? "Paste video URL (YouTube or .mp4 link)" : "Paste photo URL"}
+                  value={mediaUrl[a.id] ?? ""}
+                  onChange={(e) => setMediaUrl({ ...mediaUrl, [a.id]: e.target.value })}
                   className="flex-1 border rounded-lg px-3 py-2 text-sm"
                 />
                 <button
-                  onClick={() => handleAddPhoto(a.id)}
+                  onClick={() => handleAddMedia(a.id)}
                   className="px-4 py-2 rounded-lg border text-sm hover:bg-gray-50"
                 >
-                  Add Photo
+                  Add
                 </button>
               </div>
             </div>
