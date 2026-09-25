@@ -47,12 +47,12 @@ model Member {
   createdAt DateTime @default(now())
 }
 model Archive {
-  id        String         @id @default(cuid())
-  title     String
-  year      Int?
-  photos    ArchivePhoto[] 
-  
-  createdAt DateTime       @default(now())
+  id          String         @id @default(cuid())
+  title       String
+  description String?        
+  year        Int?           
+  photos      ArchivePhoto[] 
+  createdAt   DateTime       @default(now())
 }
 
 model ArchivePhoto {
