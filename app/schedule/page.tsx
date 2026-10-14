@@ -9,20 +9,20 @@ const content = {
     heading: "🗓️ Event Schedule",
     subheading: "October 29-30, 2026 — Songadhwa, Bairagitola",
     schedule: [
-      { time: "8:00 PM", title: "Puja / Prayers", description: "The day begins with traditional prayers and rituals." },
-      { time: "6:00 AM", title: "Dhol Performances", description: "Traditional dhol performances by village groups." },
-      { time: "2:00 PM", title: "Lunch / Prasad Distribution", description: "Community lunch and prasad distribution for all attendees." },
-      { time: "10:00 PM", title: "Cultural Program", description: "Evening cultural performances closing out the day." },
+      { time: "8:00 PM - 10:00 PM", DAY: "Thursday", title: "Puja / Prayers", description: "The day begins with traditional prayers and rituals." },
+      { time: "10:00 PM - 6:00 AM", DAY: "Thursday-Friday", title: "Dhol Performances", description: "Traditional dhol performances by village groups." },
+      { time: "2:00 PM - 4:00 PM", DAY: "Friday", title: "Lunch / Prasad Distribution", description: "Community lunch and prasad distribution for all attendees." },
+      { time: "4:00 PM - 10:00 PM", DAY: "Friday", title: "Cultural Program", description: "Evening cultural performances closing out the day." },
     ],
   },
   hi: {
     heading: "🗓️ कार्यक्रम अनुसूची",
     subheading: "29-30 अक्टूबर 2026 — सोनगढ़वा, बैरागीटोला",
     schedule: [
-      { time: "रात  8:00", title: "पूजा / प्रार्थना", description: "दिन की शुरुआत पारंपरिक प्रार्थना और अनुष्ठानों से होती है।" },
-      { time: "सुबह 6:00", title: "ढोल प्रस्तुति", description: "गांव के समूहों द्वारा पारंपरिक ढोल प्रस्तुति।" },
-      { time: "दोपहर 2:00", title: "भोजन / प्रसाद वितरण", description: "सभी उपस्थित लोगों के लिए सामुदायिक भोजन और प्रसाद वितरण।" },
-      { time: "रात 10:00", title: "सांस्कृतिक कार्यक्रम", description: "दिन का समापन शाम के सांस्कृतिक कार्यक्रमों के साथ।" },
+      { time: "रात  8:00 - 10:00", DAY: "Thursday", title: "पूजा / प्रार्थना", description: "दिन की शुरुआत पारंपरिक प्रार्थना और अनुष्ठानों से होती है।" },
+      { time: "रात  10:00 - सुबह 6:00", DAY: "Thursday-Friday", title: "ढोल प्रस्तुति", description: "गांव के समूहों द्वारा पारंपरिक ढोल प्रस्तुति।" },
+      { time: "दोपहर 2:00 - 4:00", DAY: "Friday", title: "भोजन / प्रसाद वितरण", description: "सभी उपस्थित लोगों के लिए सामुदायिक भोजन और प्रसाद वितरण।" },
+      { time: "दोपहर 4:00 - रात 10:00", DAY: "Friday", title: "सांस्कृतिक कार्यक्रम", description: "दिन का समापन शाम के सांस्कृतिक कार्यक्रमों के साथ।" },
     ],
   },
 };

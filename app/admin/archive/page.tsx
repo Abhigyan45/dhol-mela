@@ -66,8 +66,14 @@ export default function AdminArchive() {
   }
 
   async function handleDelete(id: string) {
-    if (!confirm("Delete this year's archive and all its photos?")) return;
+    if (!confirm("Delete this archive year?")) return;
     await fetch(`/api/admin/archive/${id}`, { method: "DELETE" });
+    load();
+  }
+
+  async function handleDeleteMedia(archiveId: string, photoId: string) {
+    if (!confirm("Delete this item?")) return;
+    await fetch(`/api/admin/archive/${archiveId}/photos/${photoId}`, { method: "DELETE" });
     load();
   }
 
@@ -126,21 +132,28 @@ export default function AdminArchive() {
               </div>
 
               <div className="grid grid-cols-4 gap-2 mb-3">
-                {a.photos.map((p: Photo) => (
-                  p.type === "video" ? (
-                    <div key={p.id} className="w-full aspect-square bg-gray-900 rounded-lg flex items-center justify-center text-white text-2xl">
-                      ▶️
-                    </div>
-                  ) : (
-                    <img
-                      key={p.id}
-                      src={p.url}
-                      alt={p.caption ?? ""}
-                      className="w-full aspect-square object-cover rounded-lg"
-                    />
-                  )
-                ))}
-              </div>
+               {a.photos.map((p: Photo) => (
+                <div key={p.id} className="relative group">
+                {p.type === "video" ? (
+                <div className="w-full aspect-square bg-gray-900 rounded-lg flex items-center justify-center text-white text-2xl">
+                 ▶️
+                </div>
+                ) : (
+        <img
+          src={p.url}
+          alt={p.caption ?? ""}
+          className="w-full aspect-square object-cover rounded-lg"
+        />
+      )}
+      <button
+        onClick={() => handleDeleteMedia(a.id, p.id)}
+        className="absolute top-1 right-1 bg-red-600 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+      >
+        ✕
+      </button>
+    </div>
+  ))}
+</div>
 
               <div className="flex gap-2 mb-2">
                 <button
